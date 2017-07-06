@@ -12,7 +12,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button greenButton, orangeButton, redButton, blueButton;
+    private Button greenButton, orangeButton, redButton, blueButton, start;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Random generator = new Random();
-        int random = generator.nextInt(4);
+        start = (Button) findViewById(R.id.startButton);
 
 
         greenButton = (Button) findViewById(R.id.greenButton);
@@ -100,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
         redButton.setBackgroundColor(0xFFcc0000);
         blueButton.setBackgroundColor(0xFF0099cc);
     }
+
+
 
    /* public void green(View view) {
         greenButton.setBackgroundColor(Color.GREEN);
