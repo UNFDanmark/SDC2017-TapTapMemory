@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         greenButton.setBackgroundColor(GREEN_OFF);
-        orangeButton.setBackgroundColor(ORANGE_OFF;
+        orangeButton.setBackgroundColor(ORANGE_OFF);
         redButton.setBackgroundColor(RED_OFF);
         blueButton.setBackgroundColor(BLUE_OFF);
     }
