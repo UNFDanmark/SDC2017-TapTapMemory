@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        orangeButton.setBackgroundColor(Color.YELLOW);
+                        orangeButton.setBackgroundColor(0xFFffbb33);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        redButton.setBackgroundColor(Color.RED);
+                        redButton.setBackgroundColor(0xFFff4444);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
