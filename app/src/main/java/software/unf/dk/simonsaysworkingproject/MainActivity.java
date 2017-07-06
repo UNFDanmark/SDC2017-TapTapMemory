@@ -1,6 +1,7 @@
 package software.unf.dk.simonsaysworkingproject;
 
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.Random;
+import java.util.concurrent.CountDownLatch;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         greenButton.setBackgroundColor(GREEN_OFF);
-        orangeButton.setBackgroundColor(ORANGE_OFF);
+        orangeButton.setBackgroundColor(ORANGE_OFF;
         redButton.setBackgroundColor(RED_OFF);
         blueButton.setBackgroundColor(BLUE_OFF);
     }
@@ -115,18 +117,65 @@ public class MainActivity extends AppCompatActivity {
         Random generator = new Random();
         rnr = (generator.nextInt(4));
         if (rnr == 1) {
-            greenButton.setBackgroundColor(GREEN_ON);
+            greenButton.setBackgroundColor(0xFF00e600);
+            new CountDownTimer(1000, 1000) {
+                @Override
+                public void onTick(long l) {
+
+                }
+
+                @Override
+                public void onFinish() {
+                    greenButton.setBackgroundColor(0xFF669900);
+
+                }
+            }.start();
         } else if (rnr == 2) {
-            orangeButton.setBackgroundColor(ORANGE_ON);
+            orangeButton.setBackgroundColor(0xFFffbb33);
+            new CountDownTimer(1000, 1000) {
+                @Override
+                public void onTick(long l) {
+
+                }
+
+                @Override
+                public void onFinish() {
+                    orangeButton.setBackgroundColor(0xFFff8800);
+
+                }
+            }.start();
         } else if (rnr == 3) {
-            blueButton.setBackgroundColor(BLUE_ON);
+            blueButton.setBackgroundColor(0xFF66d9ff);
+            new CountDownTimer(1000, 1000) {
+                @Override
+                public void onTick(long l) {
+
+                }
+
+                @Override
+                public void onFinish() {
+                    blueButton.setBackgroundColor(0xFF0086b3);
+
+                }
+            }.start();
         } else if (rnr == 0) {
-            redButton.setBackgroundColor(RED_ON);
+            redButton.setBackgroundColor(0xFFff3333);
+            new CountDownTimer(1000, 1000) {
+                @Override
+                public void onTick(long l) {
+
+                }
+
+                @Override
+                public void onFinish() {
+                    redButton.setBackgroundColor(0xFFcc0000);
+
+                }
+            }.start();
         }
     }
 
 
-//
 
 
     /*public void green(View view) {
