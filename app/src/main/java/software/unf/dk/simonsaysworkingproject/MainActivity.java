@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        greenButton.setBackgroundColor(Color.GREEN);
+                        greenButton.setBackgroundColor(0xFF00e600);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        redButton.setBackgroundColor(0xFFcc33ff);
+                        redButton.setBackgroundColor(0xFFff1a1a);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
@@ -87,20 +87,20 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        blueButton.setBackgroundColor(Color.CYAN);
+                        blueButton.setBackgroundColor(0xFF66d9ff);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        blueButton.setBackgroundColor(0xFF0099cc);
+                        blueButton.setBackgroundColor(0xFF0086b3);
                         return true;
                 }
                 return false;
             }
         });
         greenButton.setBackgroundColor(0xFF669900);
-        orangeButton.setBackgroundColor(0xFFff8800);
+        orangeButton.setBackgroundColor(0xFFff8000);
         redButton.setBackgroundColor(0xFFcc0000);
-        blueButton.setBackgroundColor(0xFF0099cc);
+        blueButton.setBackgroundColor(0xFF0086b3);
     }
 
     public void start(View view) {
