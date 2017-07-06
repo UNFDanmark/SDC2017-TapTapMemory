@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        greenButton.setBackgroundColor(0x00AA0000);
+                        greenButton.setBackgroundColor(0xFF669900);
                         return true;
                 }
                 return false;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        orangeButton.setBackgroundColor(0x00AA0000);
+                        orangeButton.setBackgroundColor(0xFFff8800);
                         return true;
                 }
                 return false;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        redButton.setBackgroundColor(0x00AA0000);
+                        redButton.setBackgroundColor(0xFFcc0000);
                         return true;
                 }
                 return false;
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        blueButton.setBackgroundColor(0x00AA0000);
+                        blueButton.setBackgroundColor(0xFF0099cc);
                         return true;
                 }
                 return false;

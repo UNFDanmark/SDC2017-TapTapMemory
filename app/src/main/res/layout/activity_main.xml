@@ -32,7 +32,7 @@
             android:layout_toEndOf="@+id/greenButton"
             android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_orange_dark"
-            android:onClick="orange"/>
+            android:onClick="orange" />
 
         <Button
             android:id="@+id/redButton"
@@ -51,6 +51,6 @@
             android:layout_below="@+id/orangeButton"
             android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_blue_dark"
-            android:onClick="blue"/>
+            android:onClick="blue" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
