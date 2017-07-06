@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Random generator = new Random();
-        int rnr = (generator.nextInt(4));
+        rnr = (generator.nextInt(4));
         start = (Button) findViewById(R.id.startButton);
 
 
@@ -107,15 +107,14 @@ public class MainActivity extends AppCompatActivity {
         if (rnr == 1) {
             greenButton.setBackgroundColor(Color.GREEN);
         } else if (rnr == 2) {
-            greenButton.setBackgroundColor(Color.YELLOW);
+            orangeButton.setBackgroundColor(Color.YELLOW);
         } else if (rnr == 3) {
-            greenButton.setBackgroundColor(Color.CYAN);
+            blueButton.setBackgroundColor(Color.CYAN);
         } else if (rnr == 4) {
-            greenButton.setBackgroundColor(Color.RED);
+            redButton.setBackgroundColor(Color.RED);
         }
     }
 
-//
 
 
     /*public void green(View view) {
