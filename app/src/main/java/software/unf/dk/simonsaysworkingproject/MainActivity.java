@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         Random generator = new Random();
         rnr = (generator.nextInt(4));
         if (rnr == 1) {
-            greenButton.setBackgroundColor(0xFF00e600);
+            greenButton.setBackgroundColor(GREEN_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -126,12 +126,12 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    greenButton.setBackgroundColor(0xFF669900);
+                    greenButton.setBackgroundColor(GREEN_OFF);
 
                 }
             }.start();
         } else if (rnr == 2) {
-            orangeButton.setBackgroundColor(0xFFffbb33);
+            orangeButton.setBackgroundColor(ORANGE_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -140,12 +140,12 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    orangeButton.setBackgroundColor(0xFFff8800);
+                    orangeButton.setBackgroundColor(ORANGE_OFF);
 
                 }
             }.start();
         } else if (rnr == 3) {
-            blueButton.setBackgroundColor(0xFF66d9ff);
+            blueButton.setBackgroundColor(BLUE_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -154,12 +154,12 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    blueButton.setBackgroundColor(0xFF0086b3);
+                    blueButton.setBackgroundColor(BLUE_OFF);
 
                 }
             }.start();
         } else if (rnr == 0) {
-            redButton.setBackgroundColor(0xFFff3333);
+            redButton.setBackgroundColor(RED_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    redButton.setBackgroundColor(0xFFcc0000);
+                    redButton.setBackgroundColor(RED_OFF);
 
                 }
             }.start();
