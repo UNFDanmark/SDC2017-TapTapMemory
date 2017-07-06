@@ -3,6 +3,8 @@ package software.unf.dk.simonsaysworkingproject;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,13 +18,81 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         greenButton = (Button) findViewById(R.id.greenButton);
+        greenButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Log.i("tagtag0", "ontouch");
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        Log.i("tagtag1", "action button press");
+                        greenButton.setBackgroundColor(Color.GREEN);
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        Log.i("tagtag2", "action button release");
+                        greenButton.setBackgroundColor(0x00AA0000);
+                        return true;
+                }
+                return false;
+            }
+        });
         orangeButton = (Button) findViewById(R.id.orangeButton);
+        orangeButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Log.i("tagtag0", "ontouch");
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        Log.i("tagtag1", "action button press");
+                        orangeButton.setBackgroundColor(Color.YELLOW);
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        Log.i("tagtag2", "action button release");
+                        orangeButton.setBackgroundColor(0x00AA0000);
+                        return true;
+                }
+                return false;
+            }
+        });
         redButton = (Button) findViewById(R.id.redButton);
+        redButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Log.i("tagtag0", "ontouch");
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        Log.i("tagtag1", "action button press");
+                        redButton.setBackgroundColor(Color.RED);
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        Log.i("tagtag2", "action button release");
+                        redButton.setBackgroundColor(0x00AA0000);
+                        return true;
+                }
+                return false;
+            }
+        });
         blueButton = (Button) findViewById(R.id.blueButton);
+        blueButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Log.i("tagtag0", "ontouch");
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        Log.i("tagtag1", "action button press");
+                        blueButton.setBackgroundColor(Color.CYAN);
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        Log.i("tagtag2", "action button release");
+                        blueButton.setBackgroundColor(0x00AA0000);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 
-    public void green(View view) {
+   /* public void green(View view) {
         greenButton.setBackgroundColor(Color.GREEN);
     }
 
@@ -35,6 +105,6 @@ public class MainActivity extends AppCompatActivity {
     }
     public void red(View view) {
         redButton.setBackgroundColor(Color.RED);
-    }
+    }*/
 
 }
