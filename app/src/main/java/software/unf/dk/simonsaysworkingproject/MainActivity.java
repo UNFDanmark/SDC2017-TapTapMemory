@@ -104,22 +104,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void start(View view) {
-        if (rnr = 1) {
-            public void green (View view){
-                greenButton.setBackgroundColor(Color.GREEN);
-            }
-        } else if (rnr = 2) {
-            public void orange (View view){
-                greenButton.setBackgroundColor(Color.YELLOW);
-            }
-        } else if (rnr = 3) {
-            public void blue (View view){
-                greenButton.setBackgroundColor(Color.CYAN);
-            }
-        } else if (rnr = 4) {
-            public void red (View view){
-                greenButton.setBackgroundColor(Color.RED);
-            }
+        if (rnr == 1) {
+            greenButton.setBackgroundColor(Color.GREEN);
+        } else if (rnr == 2) {
+            greenButton.setBackgroundColor(Color.YELLOW);
+        } else if (rnr == 3) {
+            greenButton.setBackgroundColor(Color.CYAN);
+        } else if (rnr == 4) {
+            greenButton.setBackgroundColor(Color.RED);
         }
     }
 
