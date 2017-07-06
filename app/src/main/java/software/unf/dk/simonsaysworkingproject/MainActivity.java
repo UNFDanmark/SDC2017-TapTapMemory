@@ -106,5 +106,5 @@ public class MainActivity extends AppCompatActivity {
     public void red(View view) {
         redButton.setBackgroundColor(Color.RED);
     }*/
-
+//
 }
