@@ -14,6 +14,16 @@ public class MainActivity extends AppCompatActivity {
 
     private Button greenButton, orangeButton, redButton, blueButton, start;
     private int rnr;
+    private final int GREEN_ON = 0xFF00e600;
+    private final int GREEN_OFF = 0xFF669900;
+    private final int ORANGE_ON = 0xFFffbb33;
+    private final int ORANGE_OFF = 0xFFff8800;
+    private final int RED_ON = 0xFFff3333;
+    private final int RED_OFF = 0xFFcc0000;
+    private final int BLUE_ON = 0xFF66d9ff;
+    private final int BLUE_OFF = 0xFF0086b3;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        greenButton.setBackgroundColor(0xFF00e600);
+                        greenButton.setBackgroundColor(GREEN_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        greenButton.setBackgroundColor(0xFF669900);
+                        greenButton.setBackgroundColor(GREEN_OFF);
                         return true;
                 }
                 return false;
@@ -49,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        orangeButton.setBackgroundColor(0xFFffbb33);
+                        orangeButton.setBackgroundColor(ORANGE_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        orangeButton.setBackgroundColor(0xFFff8800);
+                        orangeButton.setBackgroundColor(ORANGE_OFF);
                         return true;
                 }
                 return false;
@@ -67,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        redButton.setBackgroundColor(0xFFff3333);
+                        redButton.setBackgroundColor(RED_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        redButton.setBackgroundColor(0xFFcc0000);
+                        redButton.setBackgroundColor(RED_OFF);
                         return true;
                 }
                 return false;
@@ -85,20 +95,20 @@ public class MainActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        blueButton.setBackgroundColor(0xFF66d9ff);
+                        blueButton.setBackgroundColor(BLUE_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        blueButton.setBackgroundColor(0xFF0086b3);
+                        blueButton.setBackgroundColor(BLUE_OFF);
                         return true;
                 }
                 return false;
             }
         });
-        greenButton.setBackgroundColor(0xFF669900);
-        orangeButton.setBackgroundColor(0xFFff8000);
-        redButton.setBackgroundColor(0xFFcc0000);
-        blueButton.setBackgroundColor(0xFF0086b3);
+        greenButton.setBackgroundColor(GREEN_OFF);
+        orangeButton.setBackgroundColor(ORANGE_OFF;
+        redButton.setBackgroundColor(RED_OFF);
+        blueButton.setBackgroundColor(BLUE_OFF);
     }
 
     public void start(View view) {
