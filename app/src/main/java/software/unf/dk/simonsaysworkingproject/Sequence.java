@@ -17,9 +17,18 @@ public class Sequence {
         for (int i = 0; i < something; i++) {
             sequence.add(generator.nextInt(4));
         }
+
+    }
+
+    public int length () {
+        return sequence.size();
     }
 
     public void add () {
         sequence.add(generator.nextInt(4));
+    }
+
+    public int get (int i) {
+        return sequence.get(i);
     }
 }

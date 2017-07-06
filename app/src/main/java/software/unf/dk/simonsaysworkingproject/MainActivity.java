@@ -121,7 +121,70 @@ public class MainActivity extends AppCompatActivity {
 
         Random generator = new Random();
         rnr = (generator.nextInt(4));
-        if (rnr == 1) {
+
+        for (int i = 0; i < sequence.length(); i++) {
+            sequence.get(i);
+            if (i == 1) {
+                greenButton.setBackgroundColor(GREEN_ON);
+                new CountDownTimer(1000, 1000) {
+                    @Override
+                    public void onTick(long l) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        greenButton.setBackgroundColor(GREEN_OFF);
+
+                    }
+                }.start();
+            } else if (rnr == 2) {
+                orangeButton.setBackgroundColor(ORANGE_ON);
+                new CountDownTimer(1000, 1000) {
+                    @Override
+                    public void onTick(long l) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        orangeButton.setBackgroundColor(ORANGE_OFF);
+
+                    }
+                }.start();
+            } else if (rnr == 3) {
+                blueButton.setBackgroundColor(BLUE_ON);
+                new CountDownTimer(1000, 1000) {
+                    @Override
+                    public void onTick(long l) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        blueButton.setBackgroundColor(BLUE_OFF);
+
+                    }
+                }.start();
+            } else if (rnr == 0) {
+                redButton.setBackgroundColor(RED_ON);
+                new CountDownTimer(1000, 1000) {
+                    @Override
+                    public void onTick(long l) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        redButton.setBackgroundColor(RED_OFF);
+
+                    }
+                }.start();
+            }
+        }
+    }
+
+        /*if (rnr == 1) {
             greenButton.setBackgroundColor(GREEN_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
@@ -178,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }.start();
         }
-    }
+    }*/
 
 
 
