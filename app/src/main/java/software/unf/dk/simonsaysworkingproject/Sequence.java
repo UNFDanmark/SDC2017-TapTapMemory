@@ -9,9 +9,17 @@ import java.util.Random;
 
 public class Sequence {
     ArrayList<Integer> sequence = new ArrayList<>();
-    Random generator = new Random();
-    int rnr = (generator.nextInt(4));
+    Random generator;
+//    int rnr = (generator.nextInt(4));
 
+    public Sequence(int something) {
+        generator = new Random();
+        for (int i = 0; i < something; i++) {
+            sequence.add(generator.nextInt(4));
+        }
+    }
 
-
+    public void add () {
+        sequence.add(generator.nextInt(4));
+    }
 }

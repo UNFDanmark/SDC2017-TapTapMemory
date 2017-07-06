@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;
     private final int BLUE_OFF = 0xFF0086b3;
+    private Sequence sequence;
 
 
 
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         start = (Button) findViewById(R.id.startButton);
+
+        sequence = new Sequence(0);
 
 
         greenButton = (Button) findViewById(R.id.greenButton);
@@ -114,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void start(View view) {
+        sequence.add();
+
         Random generator = new Random();
         rnr = (generator.nextInt(4));
         if (rnr == 1) {
