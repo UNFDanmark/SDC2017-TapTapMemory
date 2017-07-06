@@ -13,14 +13,15 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private Button greenButton, orangeButton, redButton, blueButton, start;
+    private int rnr;
 
-//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Random generator = new Random();
+        int rnr = (generator.nextInt(4));
         start = (Button) findViewById(R.id.startButton);
 
 
@@ -102,9 +103,30 @@ public class MainActivity extends AppCompatActivity {
         blueButton.setBackgroundColor(0xFF0099cc);
     }
 
+    public void start(View view) {
+        if (rnr = 1) {
+            public void green (View view){
+                greenButton.setBackgroundColor(Color.GREEN);
+            }
+        } else if (rnr = 2) {
+            public void orange (View view){
+                greenButton.setBackgroundColor(Color.YELLOW);
+            }
+        } else if (rnr = 3) {
+            public void blue (View view){
+                greenButton.setBackgroundColor(Color.CYAN);
+            }
+        } else if (rnr = 4) {
+            public void red (View view){
+                greenButton.setBackgroundColor(Color.RED);
+            }
+        }
+    }
 
 
-   /* public void green(View view) {
+
+
+    /*public void green(View view) {
         greenButton.setBackgroundColor(Color.GREEN);
     }
 
