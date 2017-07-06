@@ -9,12 +9,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button greenButton, orangeButton, redButton, blueButton, start;
+    private Button start;
     private int rnr;
     private final int GREEN_ON = 0xFF00e600;
     private final int GREEN_OFF = 0xFF669900;
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private final int BLUE_ON = 0xFF66d9ff;
     private final int BLUE_OFF = 0xFF0086b3;
     private Sequence sequence;
+    private ArrayList<Button> buttonList;
+    private ArrayList<Bulb> bulbList;
+    private ArrayList<Integer> colorOffList;
+    private ArrayList<Integer> colorOnList;
 
 
 
@@ -37,95 +42,118 @@ public class MainActivity extends AppCompatActivity {
 
         sequence = new Sequence(0);
 
+        bulbList = new ArrayList<>();
 
-        greenButton = (Button) findViewById(R.id.greenButton);
-        greenButton.setOnTouchListener(new View.OnTouchListener() {
+        bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF));
+        bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF));
+        bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF));
+        bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF));
+        
+        buttonList = new ArrayList<>();
+        buttonList.add((Button) findViewById(R.id.greenButton));
+        buttonList.add((Button) findViewById(R.id.orangeButton));
+        buttonList.add((Button) findViewById(R.id.redButton));
+        buttonList.add((Button) findViewById(R.id.blueButton));
+
+        colorOffList = new ArrayList<>();
+        colorOffList.add(GREEN_OFF);
+        colorOffList.add(ORANGE_OFF);
+        colorOffList.add(RED_OFF);
+        colorOffList.add(BLUE_OFF);
+
+        colorOnList = new ArrayList<>();
+        colorOnList.add(GREEN_ON);
+        colorOnList.add(ORANGE_ON);
+        colorOnList.add(RED_ON);
+        colorOnList.add(BLUE_ON);
+
+
+        buttonList.get(0).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 Log.i("tagtag0", "ontouch");
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        greenButton.setBackgroundColor(GREEN_ON);
+                        buttonList.get(0).setBackgroundColor(GREEN_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        greenButton.setBackgroundColor(GREEN_OFF);
+                        buttonList.get(0).setBackgroundColor(GREEN_OFF);
                         return true;
                 }
                 return false;
             }
         });
-        orangeButton = (Button) findViewById(R.id.orangeButton);
-        orangeButton.setOnTouchListener(new View.OnTouchListener() {
+        buttonList.get(1).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 Log.i("tagtag0", "ontouch");
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        orangeButton.setBackgroundColor(ORANGE_ON);
+                        buttonList.get(1).setBackgroundColor(ORANGE_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        orangeButton.setBackgroundColor(ORANGE_OFF);
+                        buttonList.get(1).setBackgroundColor(ORANGE_OFF);
                         return true;
                 }
                 return false;
             }
         });
-        redButton = (Button) findViewById(R.id.redButton);
-        redButton.setOnTouchListener(new View.OnTouchListener() {
+        buttonList.get(2).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 Log.i("tagtag0", "ontouch");
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        redButton.setBackgroundColor(RED_ON);
+                        buttonList.get(2).setBackgroundColor(RED_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        redButton.setBackgroundColor(RED_OFF);
+                        buttonList.get(2).setBackgroundColor(RED_OFF);
                         return true;
                 }
                 return false;
             }
         });
-        blueButton = (Button) findViewById(R.id.blueButton);
-        blueButton.setOnTouchListener(new View.OnTouchListener() {
+        buttonList.get(3).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 Log.i("tagtag0", "ontouch");
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         Log.i("tagtag1", "action button press");
-                        blueButton.setBackgroundColor(BLUE_ON);
+                        buttonList.get(3).setBackgroundColor(BLUE_ON);
                         return true;
                     case MotionEvent.ACTION_UP:
                         Log.i("tagtag2", "action button release");
-                        blueButton.setBackgroundColor(BLUE_OFF);
+                        buttonList.get(3).setBackgroundColor(BLUE_OFF);
                         return true;
                 }
                 return false;
             }
         });
-        greenButton.setBackgroundColor(GREEN_OFF);
-        orangeButton.setBackgroundColor(ORANGE_OFF);
-        redButton.setBackgroundColor(RED_OFF);
-        blueButton.setBackgroundColor(BLUE_OFF);
+        buttonList.get(0).setBackgroundColor(GREEN_OFF);
+        buttonList.get(1).setBackgroundColor(ORANGE_OFF);
+        buttonList.get(2).setBackgroundColor(RED_OFF);
+        buttonList.get(3).setBackgroundColor(BLUE_OFF);
     }
 
     public void start(View view) {
         sequence.add();
-
-        Random generator = new Random();
-        rnr = (generator.nextInt(4));
-
         for (int i = 0; i < sequence.length(); i++) {
-            sequence.get(i);
-            if (i == 1) {
-                greenButton.setBackgroundColor(GREEN_ON);
+            int x = sequence.get(i);
+            bulbList.get(x).blink();
+        }
+//        light(sequence.get(0));
+        /*
+        for (int i = 0; i < sequence.length(); i++) {
+            rnr = sequence.get(i);
+            if (rnr == 1) {
+                buttonList.get(0).setBackgroundColor(GREEN_ON);
                 new CountDownTimer(1000, 1000) {
                     @Override
                     public void onTick(long l) {
@@ -134,12 +162,12 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        greenButton.setBackgroundColor(GREEN_OFF);
+                        buttonList.get(0).setBackgroundColor(GREEN_OFF);
 
                     }
                 }.start();
             } else if (rnr == 2) {
-                orangeButton.setBackgroundColor(ORANGE_ON);
+                buttonList.get(1).setBackgroundColor(ORANGE_ON);
                 new CountDownTimer(1000, 1000) {
                     @Override
                     public void onTick(long l) {
@@ -148,12 +176,12 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        orangeButton.setBackgroundColor(ORANGE_OFF);
+                        buttonList.get(1).setBackgroundColor(ORANGE_OFF);
 
                     }
                 }.start();
             } else if (rnr == 3) {
-                blueButton.setBackgroundColor(BLUE_ON);
+                buttonList.get(3).setBackgroundColor(BLUE_ON);
                 new CountDownTimer(1000, 1000) {
                     @Override
                     public void onTick(long l) {
@@ -162,12 +190,12 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        blueButton.setBackgroundColor(BLUE_OFF);
+                        buttonList.get(3).setBackgroundColor(BLUE_OFF);
 
                     }
                 }.start();
             } else if (rnr == 0) {
-                redButton.setBackgroundColor(RED_ON);
+                buttonList.get(2).setBackgroundColor(RED_ON);
                 new CountDownTimer(1000, 1000) {
                     @Override
                     public void onTick(long l) {
@@ -176,16 +204,34 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        redButton.setBackgroundColor(RED_OFF);
+                        buttonList.get(2).setBackgroundColor(RED_OFF);
 
                     }
                 }.start();
             }
-        }
+        }*/
+    }
+    public void light(final int buttonIndex) {
+        buttonList.get(buttonIndex).setBackgroundColor(colorOnList.get(buttonIndex));
+        CountDownTimer timer = new CountDownTimer(1000, 1000) {
+            @Override
+            public void onTick(long l) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                buttonList.get(buttonIndex).setBackgroundColor(colorOffList.get(buttonIndex));
+                if (buttonIndex < sequence.length()) {
+                    light(buttonIndex+1);
+                }
+            }
+        };
+        timer.start();
     }
 
         /*if (rnr == 1) {
-            greenButton.setBackgroundColor(GREEN_ON);
+            buttonList.get(0).setBackgroundColor(GREEN_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -194,12 +240,12 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    greenButton.setBackgroundColor(GREEN_OFF);
+                    buttonList.get(0).setBackgroundColor(GREEN_OFF);
 
                 }
             }.start();
         } else if (rnr == 2) {
-            orangeButton.setBackgroundColor(ORANGE_ON);
+            buttonList.get(1).setBackgroundColor(ORANGE_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -208,12 +254,12 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    orangeButton.setBackgroundColor(ORANGE_OFF);
+                    buttonList.get(1).setBackgroundColor(ORANGE_OFF);
 
                 }
             }.start();
         } else if (rnr == 3) {
-            blueButton.setBackgroundColor(BLUE_ON);
+            buttonList.get(3).setBackgroundColor(BLUE_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -222,12 +268,12 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    blueButton.setBackgroundColor(BLUE_OFF);
+                    buttonList.get(3).setBackgroundColor(BLUE_OFF);
 
                 }
             }.start();
         } else if (rnr == 0) {
-            redButton.setBackgroundColor(RED_ON);
+            buttonList.get(2).setBackgroundColor(RED_ON);
             new CountDownTimer(1000, 1000) {
                 @Override
                 public void onTick(long l) {
@@ -236,7 +282,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    redButton.setBackgroundColor(RED_OFF);
+                    buttonList.get(2).setBackgroundColor(RED_OFF);
 
                 }
             }.start();
@@ -247,18 +293,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     /*public void green(View view) {
-        greenButton.setBackgroundColor(Color.GREEN);
+        buttonList.get(0).setBackgroundColor(Color.GREEN);
     }
 
     public void orange(View view) {
-        orangeButton.setBackgroundColor(Color.YELLOW);
+        buttonList.get(1).setBackgroundColor(Color.YELLOW);
     }
 
     public void blue(View view) {
-        blueButton.setBackgroundColor(Color.CYAN);
+        buttonList.get(3).setBackgroundColor(Color.CYAN);
     }
     public void red(View view) {
-        redButton.setBackgroundColor(Color.RED);
+        buttonList.get(2).setBackgroundColor(Color.RED);
     }*/
 
 }
