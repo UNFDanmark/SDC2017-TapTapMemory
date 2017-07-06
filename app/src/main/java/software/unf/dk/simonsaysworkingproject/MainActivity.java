@@ -89,7 +89,10 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
+        greenButton.setBackgroundColor(0xFF669900);
+        orangeButton.setBackgroundColor(0xFFff8800);
+        redButton.setBackgroundColor(0xFFcc0000);
+        blueButton.setBackgroundColor(0xFF0099cc);
     }
 
    /* public void green(View view) {
@@ -106,5 +109,5 @@ public class MainActivity extends AppCompatActivity {
     public void red(View view) {
         redButton.setBackgroundColor(Color.RED);
     }*/
-//
+
 }
