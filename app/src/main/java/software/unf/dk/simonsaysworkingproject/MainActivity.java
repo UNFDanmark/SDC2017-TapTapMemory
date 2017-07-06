@@ -22,11 +22,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void green(View view) {
+        greenButton.setBackgroundColor(Color.GREEN);
+    }
+
+    public void orange(View view) {
+        orangeButton.setBackgroundColor(Color.YELLOW);
+    }
+
     public void blue(View view) {
         blueButton.setBackgroundColor(Color.CYAN);
     }
-
-
-
+    public void red(View view) {
+        redButton.setBackgroundColor(Color.RED);
+    }
 
 }
