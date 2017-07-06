@@ -105,13 +105,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void start(View view) {
         if (rnr == 1) {
-            greenButton.setBackgroundColor(Color.GREEN);
+            greenButton.setBackgroundColor(0xFF00e600);
         } else if (rnr == 2) {
-            orangeButton.setBackgroundColor(Color.YELLOW);
+            orangeButton.setBackgroundColor(0xFFffbb33);
         } else if (rnr == 3) {
-            blueButton.setBackgroundColor(Color.CYAN);
-        } else if (rnr == 4) {
-            redButton.setBackgroundColor(Color.RED);
+            blueButton.setBackgroundColor(0xFF66d9ff);
+        } else if (rnr == 0) {
+            redButton.setBackgroundColor(0xFFff3333);
         }
     }
 
