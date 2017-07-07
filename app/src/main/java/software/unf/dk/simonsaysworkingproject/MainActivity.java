@@ -2,6 +2,7 @@ package software.unf.dk.simonsaysworkingproject;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -32,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Bulb> bulbList;
     private ArrayList<Integer> clicked;
 
+    Button playGreenButton;
+    Button playOrangeButton;
+    Button playRedButton;
+    Button playBlueButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,40 @@ public class MainActivity extends AppCompatActivity {
         start = (Button) findViewById(R.id.startButton);
         bulbList = new ArrayList<>();
 
+        final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
+        playGreenButton = (Button) this.findViewById(R.id.greenButton);
+        playGreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmBeepMP.start();
+            }
+        });
+
+        final MediaPlayer alarmBeepMP1 = MediaPlayer.create(this, R.raw.alarm_beep);
+        playOrangeButton = (Button) this.findViewById(R.id.orangeButton);
+        playOrangeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmBeepMP.start();
+            }
+        });
+        final MediaPlayer alarmBeepMP2 = MediaPlayer.create(this, R.raw.alarm_beep);
+        playRedButton = (Button) this.findViewById(R.id.redButton);
+        playRedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmBeepMP.start();
+            }
+        });
+
+        final MediaPlayer alarmBeepMP3 = MediaPlayer.create(this, R.raw.alarm_beep);
+        playBlueButton = (Button) this.findViewById(R.id.orangeButton);
+        playBlueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmBeepMP.start();
+            }
+        });
 
         bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, this));
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, this));
@@ -50,9 +89,11 @@ public class MainActivity extends AppCompatActivity {
         sequence = new Sequence(0);
 
 
+       // if (sequence.get() != bulbList.get ().id) {
+            //restart
+    }
 
 
-}
 
     public void start(View view) {
         sequence.add();
