@@ -1,6 +1,9 @@
 package software.unf.dk.simonsaysworkingproject;
 
-import android.util.Log;
+
+import android.os.CountDownTimer;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 
 /**
@@ -8,26 +11,44 @@ import android.widget.Button;
  */
 
 public class Bulb {
-    private Button button;
-    private int colorOn;
-    private int colorOff;
-    private static int sleepTime = 1000;
-    public Bulb (Button b, int on, int off) {
-        button = b;
-        colorOff = off;
-        colorOn = on;
-        button.setBackgroundColor(off);
+    Button lightButton;
+    int on;
+    int off;
 
+    public Bulb(Button square, int bunny, int star) {
+        lightButton = square;
+        on = bunny;
+        off = star;
+
+        lightButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    lightButton.setBackgroundColor(on);
+                    return true;
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    lightButton.setBackgroundColor(off);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
-    public void blink() {
-        button.setBackgroundColor(colorOn);
-        try {
-            Thread.sleep(sleepTime);
-        } catch (Exception e) {
-            Log.e("Sleep", "Sleep had exception");
-        }
-        button.setBackgroundColor(colorOff);
+    public void blink () {
+        lightButton.setBackgroundColor(on);
+        CountDownTimer timer = new CountDownTimer(1000, 1000) {
+            @Override
+            public void onTick(long l) {
 
+            }
+
+            @Override
+            public void onFinish() {
+                lightButton.setBackgroundColor(off);
+
+            }
+        };
+        timer.start();
     }
 }
