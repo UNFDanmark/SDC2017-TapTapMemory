@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -72,14 +73,10 @@ public class MainActivity extends AppCompatActivity {
     public void save1(View view) {
         clicked.add(bulbList.get(0).ID);
         for (int i = 0; i < clicked.size(); i++) {
-            System.out.println(sequence.get(i));
-            System.out.println(clicked.get(i));
-            System.out.println(sequence);
-            System.out.println(clicked);
             if (sequence.get(i) == clicked.get(i)) {
-                Log.i("Helloooo", "boop");
+                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
             } else {
-                Log.i("nope", "nope");
+                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -87,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
         clicked.add(bulbList.get(1).ID);
         for (int i = 0; i < clicked.size(); i++) {
             if (sequence.get(i) == clicked.get(i)) {
-                Log.i("Helloooo", "boop");
+                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
             } else {
-                Log.i("nope", "nope");
+                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -97,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
         clicked.add(bulbList.get(2).ID);
         for (int i = 0; i < clicked.size(); i++) {
             if (sequence.get(i) == clicked.get(i)) {
-                Log.i("Helloooo", "boop");
+                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
             } else {
-                Log.i("nope", "nope");
+                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -107,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
         clicked.add(bulbList.get(3).ID);
         for (int i = 0; i < clicked.size(); i++) {
             if (sequence.get(i) == clicked.get(i)) {
-                Log.i("Helloooo", "boop");
+                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
             } else {
-                Log.i("nope", "nope");
+                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
             }
         }
     }
