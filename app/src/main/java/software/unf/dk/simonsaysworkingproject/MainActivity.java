@@ -1,5 +1,6 @@
 package software.unf.dk.simonsaysworkingproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private final int BLUE_OFF = 0xFF0086b3;
     private Sequence sequence;
     private ArrayList<Bulb> bulbList;
+    private ArrayList<Integer> clicked;
 
 
     @Override
@@ -47,12 +49,9 @@ public class MainActivity extends AppCompatActivity {
         sequence = new Sequence(0);
 
 
-        if(sequence.get() != bulbList.get().ID) {
-            //restart
-        }
 
 
-    }
+}
 
     public void start(View view) {
         sequence.add();
@@ -66,7 +65,53 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, i * 1500);
         }
+        clicked = new ArrayList<>();
 
+    }
+
+    public void save1(View view) {
+        clicked.add(bulbList.get(0).ID);
+        for (int i = 0; i < clicked.size(); i++) {
+            System.out.println(sequence.get(i));
+            System.out.println(clicked.get(i));
+            System.out.println(sequence);
+            System.out.println(clicked);
+            if (sequence.get(i) == clicked.get(i)) {
+                Log.i("Helloooo", "boop");
+            } else {
+                Log.i("nope", "nope");
+            }
+        }
+    }
+    public void save2(View view) {
+        clicked.add(bulbList.get(1).ID);
+        for (int i = 0; i < clicked.size(); i++) {
+            if (sequence.get(i) == clicked.get(i)) {
+                Log.i("Helloooo", "boop");
+            } else {
+                Log.i("nope", "nope");
+            }
+        }
+    }
+    public void save3(View view) {
+        clicked.add(bulbList.get(2).ID);
+        for (int i = 0; i < clicked.size(); i++) {
+            if (sequence.get(i) == clicked.get(i)) {
+                Log.i("Helloooo", "boop");
+            } else {
+                Log.i("nope", "nope");
+            }
+        }
+    }
+    public void save4(View view) {
+        clicked.add(bulbList.get(3).ID);
+        for (int i = 0; i < clicked.size(); i++) {
+            if (sequence.get(i) == clicked.get(i)) {
+                Log.i("Helloooo", "boop");
+            } else {
+                Log.i("nope", "nope");
+            }
+        }
     }
 
 }

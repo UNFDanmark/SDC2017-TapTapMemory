@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 
 
-public class Bulb {
+public class Bulb extends Intent {
     Button lightButton;
     int on;
     int off;
@@ -37,10 +37,10 @@ public class Bulb {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     lightButton.setBackgroundColor(on);
-                    return true;
+                    return false;
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     lightButton.setBackgroundColor(off);
-                    return true;
+                    return false;
                 }
                 return false;
             }
