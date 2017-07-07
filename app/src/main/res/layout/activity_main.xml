@@ -22,7 +22,8 @@
             android:layout_marginLeft="83dp"
             android:layout_marginStart="83dp"
             android:layout_marginTop="137dp"
-            android:background="@android:color/holo_green_dark" />
+            android:background="@android:color/holo_green_dark"
+            android:onClick="save"/>
 
         <Button
             android:id="@+id/orangeButton"
@@ -32,7 +33,7 @@
             android:layout_toEndOf="@+id/greenButton"
             android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_orange_dark"
-            android:onClick="orange" />
+            android:onClick="save" />
 
         <Button
             android:id="@+id/redButton"
@@ -42,7 +43,7 @@
             android:layout_toLeftOf="@+id/blueButton"
             android:layout_toStartOf="@+id/blueButton"
             android:background="@android:color/holo_red_dark"
-            android:onClick="red" />
+            android:onClick="save" />
 
         <Button
             android:id="@+id/blueButton"
@@ -51,7 +52,7 @@
             android:layout_below="@+id/orangeButton"
             android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_blue_dark"
-            android:onClick="blue" />
+            android:onClick="save" />
 
         <Button
             android:id="@+id/startButton"

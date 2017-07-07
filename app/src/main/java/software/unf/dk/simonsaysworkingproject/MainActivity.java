@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private final int GREEN_OFF = 0xFF669900;
     private final int ORANGE_ON = 0xFFffbb33;
     private final int ORANGE_OFF = 0xFFff8800;
-    private final int RED_ON = Color.BLACK;
+    private final int RED_ON = Color.GRAY;
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;
     private final int BLUE_OFF = 0xFF0086b3;
@@ -38,12 +38,19 @@ public class MainActivity extends AppCompatActivity {
         start = (Button) findViewById(R.id.startButton);
         bulbList = new ArrayList<>();
 
-        bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF));
-        bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF));
-        bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF));
-        bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF));
+
+        bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, this));
+        bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, this));
+        bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2, this));
+        bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3, this));
 
         sequence = new Sequence(0);
+
+
+        if(sequence.get() != bulbList.get().ID) {
+            //restart
+        }
+
 
     }
 
@@ -57,10 +64,9 @@ public class MainActivity extends AppCompatActivity {
                     bulbList.get(sequenceCount).blink();
 
                 }
-            }, i*1200);
+            }, i * 1500);
         }
 
     }
-
 
 }
