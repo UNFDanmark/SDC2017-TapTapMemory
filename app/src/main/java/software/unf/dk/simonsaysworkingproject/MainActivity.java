@@ -71,44 +71,56 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void save1(View view) {
-        clicked.add(bulbList.get(0).ID);
-        for (int i = 0; i < clicked.size(); i++) {
-            if (sequence.get(i) == clicked.get(i)) {
-                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+        if (clicked.size() < sequence.length()) {
+            clicked.add(bulbList.get(0).ID);
+            for (int i = 0; i < clicked.size(); i++) {
+                if (sequence.get(i) == clicked.get(i)) {
+                    Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
     }
     public void save2(View view) {
-        clicked.add(bulbList.get(1).ID);
-        for (int i = 0; i < clicked.size(); i++) {
-            if (sequence.get(i) == clicked.get(i)) {
-                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+        if (clicked.size() < sequence.length()) {
+            clicked.add(bulbList.get(1).ID);
+            for (int i = 0; i < clicked.size(); i++) {
+                if (sequence.get(i) == clicked.get(i)) {
+                    Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
     }
     public void save3(View view) {
-        clicked.add(bulbList.get(2).ID);
-        for (int i = 0; i < clicked.size(); i++) {
-            if (sequence.get(i) == clicked.get(i)) {
-                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+        if (clicked.size() < sequence.length()) {
+            clicked.add(bulbList.get(2).ID);
+            for (int i = 0; i < clicked.size(); i++) {
+                if (sequence.get(i) == clicked.get(i)) {
+                    Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
     }
     public void save4(View view) {
-        clicked.add(bulbList.get(3).ID);
-        for (int i = 0; i < clicked.size(); i++) {
-            if (sequence.get(i) == clicked.get(i)) {
-                Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+        if (clicked.size() < sequence.length()) {
+            clicked.add(bulbList.get(3).ID);
+            for (int i = 0; i < clicked.size(); i++) {
+                if (sequence.get(i) == clicked.get(i)) {
+                    Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
     }
 
 }
