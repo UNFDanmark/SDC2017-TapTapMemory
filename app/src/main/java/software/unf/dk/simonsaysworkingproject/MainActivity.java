@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 alarmBeepMP.start();
             }
         });
-
+//
         bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, this));
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, this));
         bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2, this));
