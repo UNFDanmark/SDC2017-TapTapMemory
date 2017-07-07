@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     bulbList.get(sequenceCount).blink();
 
                 }
-            }, i*1000);
+            }, i*1200);
         }
 
     }
