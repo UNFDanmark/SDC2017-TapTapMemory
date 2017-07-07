@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         start = (Button) findViewById(R.id.startButton);
+        bulbList = new ArrayList<>();
 
         bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF));
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF));
@@ -49,7 +50,14 @@ public class MainActivity extends AppCompatActivity {
     public void start(View view) {
         sequence.add();
         for (int i = 0; i < sequence.length(); i++) {
+            final int sequenceCount = sequence.get(i);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    bulbList.get(sequenceCount).blink();
 
+                }
+            }, i*1000);
         }
 
     }
