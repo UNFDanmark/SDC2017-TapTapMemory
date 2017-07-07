@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 alarmBeepMP.start();
             }
         });
+
         final MediaPlayer alarmBeepMP2 = MediaPlayer.create(this, R.raw.alarm_beep);
         playRedButton = (Button) this.findViewById(R.id.redButton);
         playRedButton.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final MediaPlayer alarmBeepMP3 = MediaPlayer.create(this, R.raw.alarm_beep);
-        playBlueButton = (Button) this.findViewById(R.id.orangeButton);
+        playBlueButton = (Button) this.findViewById(R.id.blueButton);
         playBlueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
