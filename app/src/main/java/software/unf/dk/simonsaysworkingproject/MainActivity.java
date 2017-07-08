@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Bulb> bulbList;
     private ArrayList<Integer> clicked;
     private MediaPlayer green, orange, red, blue;
+    private TextView points;
+    private int count;
 
     Button playGreenButton;
     Button playOrangeButton;
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         clicked = new ArrayList<>();
 
+        points = (TextView) findViewById(R.id.points);
 
 
     }
@@ -109,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             clicked.add(bulbList.get(j).ID);
             for (int i = 0; i < clicked.size(); i++) {
                 if (sequence.get(i) == clicked.get(i)) {
+
                     if (j == 0) {
                         green.start();
                     }

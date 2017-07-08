@@ -63,5 +63,14 @@
             android:layout_marginBottom="50dp"
             android:onClick="start"
             android:text="Start" />
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="53dp"
+            android:text="0 POINTS" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
