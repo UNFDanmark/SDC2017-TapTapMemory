@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private final int GREEN_OFF = 0xFF669900;
     private final int ORANGE_ON = 0xFFffbb33;
     private final int ORANGE_OFF = 0xFFff8800;
-    private final int RED_ON = Color.GRAY;
+    private final int RED_ON = 0xFFcc0052;
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;
     private final int BLUE_OFF = 0xFF0086b3;
@@ -127,9 +127,7 @@ public class MainActivity extends AppCompatActivity {
                         blue.start();
                     }
                     count ++;
-                    //crash points.setText(count);
-
-
+                    points.setText("Points: " + count);
 
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
@@ -142,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             alarmBeepMP.start();
             sequence.restart();
         }
+
     }
 
 }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="software.unf.dk.simonsaysworkingproject.MainActivity">
+
+        <RelativeLayout
+            android:layout_width="368dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <Button
+                android:id="@+id/greenButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="71dp"
+                android:background="@android:color/holo_green_dark"
+                android:onClick="save1"
+                android:layout_below="@+id/points"
+                android:layout_toLeftOf="@+id/startButton"
+                android:layout_toStartOf="@+id/startButton" />
+
+            <Button
+                android:id="@+id/orangeButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/greenButton"
+                android:layout_toEndOf="@+id/greenButton"
+                android:layout_toRightOf="@+id/greenButton"
+                android:background="@android:color/holo_orange_dark"
+                android:onClick="save2" />
+
+            <Button
+                android:id="@+id/redButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/greenButton"
+                android:layout_toLeftOf="@+id/blueButton"
+                android:layout_toStartOf="@+id/blueButton"
+                android:background="@android:color/holo_red_dark"
+                android:onClick="save3" />
+
+            <Button
+                android:id="@+id/blueButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/orangeButton"
+                android:layout_toRightOf="@+id/greenButton"
+                android:background="@android:color/holo_blue_dark"
+                android:onClick="save4" />
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="50dp"
+                android:onClick="start"
+                android:text="Start" />
+
+            <TextView
+                android:id="@+id/points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="53dp"
+                android:text="0 POINTS" />
+
+            <Button
+                android:id="@+id/purpleButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/orangeButton"
+                android:layout_toEndOf="@+id/orangeButton"
+                android:layout_toRightOf="@+id/orangeButton"
+                android:background="@android:color/holo_purple"
+                android:onClick="save5"/>
+
+            <Button
+                android:id="@+id/yellowButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/purpleButton"
+                android:layout_toEndOf="@+id/blueButton"
+                android:layout_toRightOf="@+id/blueButton"
+                android:background="#ffee33"
+                android:onClick="save6" />
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
