@@ -1,6 +1,7 @@
 package software.unf.dk.simonsaysworkingproject;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         clicked = new ArrayList<>();
 
         points = (TextView) findViewById(R.id.points);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
     }
