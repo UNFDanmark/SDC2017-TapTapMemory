@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Ekstra level (6 buttons)" />
+            android:text="Ekstra level (6 buttons)"
+            android:onClick="newLevel"/>
 
         <ImageButton
             android:id="@+id/imageButton"

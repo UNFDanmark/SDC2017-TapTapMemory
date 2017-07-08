@@ -142,9 +142,6 @@ public class MainActivity extends AppCompatActivity {
     private void save(int j) {
         Log.i("", "Hey");
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
-        Toast t = Toast.makeText(this, "bla", Toast.LENGTH_SHORT);
-        t.setGravity(Gravity.LEFT, 0, 0);
-        t.show();
         if (clicked.size() > sequence.length()) {
             alarmBeepMP.start();
         }
@@ -170,12 +167,18 @@ public class MainActivity extends AppCompatActivity {
                     Save.savePoints(count, getApplicationContext());
                 } else {
 //                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+                    Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.LEFT, 385, 730);
+                    t.show();
                     alarmBeepMP.start();
                     sequence.restart();
                 }
             }
         } else {
 //            Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+            Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
+            t.setGravity(Gravity.LEFT, 385, 730);
+            t.show();
             alarmBeepMP.start();
             sequence.restart();
         }
