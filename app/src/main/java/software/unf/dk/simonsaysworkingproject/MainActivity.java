@@ -46,41 +46,41 @@ public class MainActivity extends AppCompatActivity {
         start = (Button) findViewById(R.id.startButton);
         bulbList = new ArrayList<>();
 
-        final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
-        playGreenButton = (Button) this.findViewById(R.id.greenButton);
-        playGreenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alarmBeepMP.start();
-            }
-        });
+//        final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
+//        playGreenButton = (Button) this.findViewById(R.id.greenButton);
+//        playGreenButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                alarmBeepMP.start();
+//            }
+//        });
 
-        final MediaPlayer alarmBeepMP1 = MediaPlayer.create(this, R.raw.alarm_beep);
-        playOrangeButton = (Button) this.findViewById(R.id.orangeButton);
-        playOrangeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alarmBeepMP.start();
-            }
-        });
-
-        final MediaPlayer alarmBeepMP2 = MediaPlayer.create(this, R.raw.alarm_beep);
-        playRedButton = (Button) this.findViewById(R.id.redButton);
-        playRedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alarmBeepMP.start();
-            }
-        });
-
-        final MediaPlayer alarmBeepMP3 = MediaPlayer.create(this, R.raw.alarm_beep);
-        playBlueButton = (Button) this.findViewById(R.id.blueButton);
-        playBlueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alarmBeepMP.start();
-            }
-        });
+//        final MediaPlayer alarmBeepMP1 = MediaPlayer.create(this, R.raw.alarm_beep);
+//        playOrangeButton = (Button) this.findViewById(R.id.orangeButton);
+//        playOrangeButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                alarmBeepMP.start();
+//            }
+//        });
+//
+//        final MediaPlayer alarmBeepMP2 = MediaPlayer.create(this, R.raw.alarm_beep);
+//        playRedButton = (Button) this.findViewById(R.id.redButton);
+//        playRedButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                alarmBeepMP.start();
+//            }
+//        });
+//
+//        final MediaPlayer alarmBeepMP3 = MediaPlayer.create(this, R.raw.alarm_beep);
+//        playBlueButton = (Button) this.findViewById(R.id.blueButton);
+//        playBlueButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                alarmBeepMP.start();
+//            }
+//        });
 //
         bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, this));
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, this));
@@ -90,10 +90,9 @@ public class MainActivity extends AppCompatActivity {
         sequence = new Sequence(0);
 
 
-       // if (sequence.get() != bulbList.get ().id) {
-            //restart
+        // if (sequence.get() != bulbList.get ().id) {
+        //restart
     }
-
 
 
     public void start(View view) {
@@ -113,56 +112,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void save1(View view) {
-        if (clicked.size() < sequence.length()) {
-            clicked.add(bulbList.get(0).ID);
-            for (int i = 0; i < clicked.size(); i++) {
-                if (sequence.get(i) == clicked.get(i)) {
-                    Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+        save(0);
     }
+
     public void save2(View view) {
-        if (clicked.size() < sequence.length()) {
-            clicked.add(bulbList.get(1).ID);
-            for (int i = 0; i < clicked.size(); i++) {
-                if (sequence.get(i) == clicked.get(i)) {
-                    Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+        save(1);
     }
+
     public void save3(View view) {
-        if (clicked.size() < sequence.length()) {
-            clicked.add(bulbList.get(2).ID);
-            for (int i = 0; i < clicked.size(); i++) {
-                if (sequence.get(i) == clicked.get(i)) {
-                    Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+        save(2);
     }
+
     public void save4(View view) {
+        save(3);
+    }
+
+    private void save(int j){
+        Log.i("", "Hey");
+        final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
         if (clicked.size() < sequence.length()) {
-            clicked.add(bulbList.get(3).ID);
+            clicked.add(bulbList.get(j).ID);
             for (int i = 0; i < clicked.size(); i++) {
                 if (sequence.get(i) == clicked.get(i)) {
                     Toast.makeText(getApplicationContext(), "AMAZING!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+                    alarmBeepMP.start();
+                    ;
                 }
             }
+        } else {
+            Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+            alarmBeepMP.start();
         }
-        Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
     }
 
 }
