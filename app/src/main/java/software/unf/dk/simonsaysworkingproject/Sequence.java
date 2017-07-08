@@ -11,10 +11,10 @@ public class Sequence {
     ArrayList<Integer> sequence = new ArrayList<>();
     Random generator;
 
-    public Sequence(int something) {
+    public Sequence(int something, int j) {
         generator = new Random();
         for (int i = 0; i < something; i++) {
-            sequence.add(generator.nextInt(4));
+            sequence.add(generator.nextInt(j));
         }
 
     }
@@ -23,8 +23,8 @@ public class Sequence {
         return sequence.size();
     }
 
-    public void add () {
-        sequence.add(generator.nextInt(4));
+    public void add (int k) {
+        sequence.add(generator.nextInt(k));
     }
 
     public int get (int i) {

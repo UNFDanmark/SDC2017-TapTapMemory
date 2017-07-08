@@ -55,7 +55,7 @@ public class SecondActivity extends AppCompatActivity {
         bulbList2.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList2.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
 
-        sequence2 = new Sequence(0);
+        sequence2 = new Sequence(0, 6);
 
         clicked2 = new ArrayList<>();
 
@@ -64,7 +64,7 @@ public class SecondActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     public void start(View view) {
-        sequence2.add();
+        sequence2.add(6);
         for (int i = 0; i < sequence2.length(); i++) {
             final int sequenceCount = sequence2.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -94,11 +94,11 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void save5(View view) {
-        save(5);
+        save(4);
     }
 
     public void save6(View view) {
-        save(6);
+        save(5);
     }
 
     private void save(int j) {

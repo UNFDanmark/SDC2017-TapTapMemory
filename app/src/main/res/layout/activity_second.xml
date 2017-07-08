@@ -16,22 +16,21 @@
             android:id="@+id/greenButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/points"
-            android:layout_marginTop="71dp"
-            android:layout_toLeftOf="@+id/startButton"
-            android:layout_toStartOf="@+id/startButton"
+            android:layout_marginTop="75dp"
             android:background="@android:color/holo_green_dark"
-            android:onClick="save1" />
+            android:onClick="save1"
+            android:layout_below="@+id/points"
+            android:layout_toLeftOf="@+id/orangeButton"
+            android:layout_toStartOf="@+id/orangeButton" />
 
         <Button
             android:id="@+id/orangeButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignTop="@+id/greenButton"
-            android:layout_toEndOf="@+id/greenButton"
-            android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_orange_dark"
-            android:onClick="save2" />
+            android:onClick="save2"
+            android:layout_above="@+id/redButton"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/redButton"

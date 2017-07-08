@@ -1,5 +1,6 @@
 package software.unf.dk.simonsaysworkingproject;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -51,20 +52,21 @@ public class MainActivity extends AppCompatActivity {
         bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
         bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
 
-        sequence = new Sequence(0);
+        sequence = new Sequence(0, 4);
 
         clicked = new ArrayList<>();
 
         points = (TextView) findViewById(R.id.points);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //Button newActivity = (Button) findViewById(R.id.startActivity);
 
 
     }
 
 
     public void start(View view) {
-        sequence.add();
+        sequence.add(4);
         for (int i = 0; i < sequence.length(); i++) {
             final int sequenceCount = sequence.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -139,6 +141,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void menu(View view) {
-
+        startActivity(new Intent(MainActivity.this, SecondActivity.class));
     }
 }
