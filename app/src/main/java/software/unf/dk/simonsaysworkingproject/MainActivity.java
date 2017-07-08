@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
         save(3);
     }
 
-//
-    private void save(int j){
+    //
+    private void save(int j) {
         Log.i("", "Hey");
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
         if (clicked.size() > sequence.length()) {
@@ -126,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
                     if (j == 3) {
                         blue.start();
                     }
+                    count ++;
+                    //crash points.setText(count);
+
+
+
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
