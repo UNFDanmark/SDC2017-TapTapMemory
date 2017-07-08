@@ -32,7 +32,7 @@ public class SecondActivity extends AppCompatActivity {
     private ArrayList<Integer> clicked2;
     private MediaPlayer green, orange, red, blue, purple, yellow;
     private TextView points;
-    private int count;
+    private long count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,7 @@ public class SecondActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
+
     public void start(View view) {
         sequence2.add(6);
         for (int i = 0; i < sequence2.length(); i++) {
@@ -131,6 +132,7 @@ public class SecondActivity extends AppCompatActivity {
                     }
                     count ++;
                     points.setText("Points: " + count);
+                    Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
@@ -143,6 +145,12 @@ public class SecondActivity extends AppCompatActivity {
             sequence2.restart();
         }
 
+    }
+
+    public void onResume() {
+        super.onResume();
+        count = Save.load(getApplicationContext());
+        points.setText(String.valueOf("Points: " + count));
     }
 
 }

@@ -8,14 +8,15 @@ import android.content.SharedPreferences;
  */
 
 public class Save {
-    public static void savePoints (long score, Context context) {
-        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject"), Context.MODE_PRIVATE);
+    public static void savePoints (long points, Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putLong("points", score);
+        editor.putLong("points", points);
+        editor.commit();
     }
 
     public static long load (Context context) {
-        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject"), Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
         return sharedPref.getLong("points", 0);
     }
 }

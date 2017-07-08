@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
                     count++;
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
-
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
