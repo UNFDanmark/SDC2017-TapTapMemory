@@ -77,28 +77,24 @@ public class MainActivity extends AppCompatActivity {
     public void save1(View view) {
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
         alarmBeepMP.start();
-        Toast.makeText(getApplicationContext(), "Press Start", Toast.LENGTH_SHORT).show();
         save(0);
     }
 
     public void save2(View view) {
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
         alarmBeepMP.start();
-        Toast.makeText(getApplicationContext(), "Press Start", Toast.LENGTH_SHORT).show();
         save(1);
     }
 
     public void save3(View view) {
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
         alarmBeepMP.start();
-        Toast.makeText(getApplicationContext(), "Press Start", Toast.LENGTH_SHORT).show();
         save(2);
     }
 
     public void save4(View view) {
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
         alarmBeepMP.start();
-        Toast.makeText(getApplicationContext(), "Press Start", Toast.LENGTH_SHORT).show();
         save(3);
     }
 
