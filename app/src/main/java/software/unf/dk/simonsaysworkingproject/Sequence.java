@@ -31,4 +31,6 @@ public class Sequence {
     public int get (int i) {
         return sequence.get(i);
     }
+
+    public void restart () { sequence.clear();}
 }
