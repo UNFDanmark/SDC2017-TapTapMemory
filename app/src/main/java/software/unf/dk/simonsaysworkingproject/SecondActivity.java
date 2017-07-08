@@ -1,5 +1,6 @@
 package software.unf.dk.simonsaysworkingproject;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -151,6 +152,10 @@ public class SecondActivity extends AppCompatActivity {
         super.onResume();
         count = Save.load(getApplicationContext());
         points.setText(String.valueOf("Points: " + count));
+    }
+
+    public void back(View view) {
+        startActivity(new Intent(SecondActivity.this, StoreActivity.class));
     }
 
 }

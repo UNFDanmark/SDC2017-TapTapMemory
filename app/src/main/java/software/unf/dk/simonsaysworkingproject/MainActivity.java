@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void menu(View view) {
-        startActivity(new Intent(MainActivity.this, SecondActivity.class));
+        startActivity(new Intent(MainActivity.this, StoreActivity.class));
     }
 
     public void onPause() {
