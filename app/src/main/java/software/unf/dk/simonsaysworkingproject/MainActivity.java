@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -63,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+//    LinearLayout layout = new LinearLayout(this);
+//                    layout.setBackgroundResource(R.color.colorPrimary);
+//    Toast toast = new Toast(this);
+//                    toast.setView(layout);
+//                    toast.setGravity(Gravity.NO_GRAVITY, 50, 20);
+//                    toast.show();
 
 
     public void start(View view) {
@@ -122,14 +131,16 @@ public class MainActivity extends AppCompatActivity {
                     if (j == 3) {
                         blue.start();
                     }
-                    count ++;
+                    count++;
                     points.setText("Points: " + count);
 
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
                     sequence.restart();
-                    LinearLayout layout = new LinearLayout(this);
+                    Toast toast = new Toast(this);
+                    toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
+
                 }
             }
         } else {
