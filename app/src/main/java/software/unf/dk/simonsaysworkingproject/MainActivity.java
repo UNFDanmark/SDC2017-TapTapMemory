@@ -66,14 +66,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    LinearLayout layout = new LinearLayout(this);
-//                    layout.setBackgroundResource(R.color.colorPrimary);
-//    Toast toast = new Toast(this);
-//                    toast.setView(layout);
-//                    toast.setGravity(Gravity.NO_GRAVITY, 50, 20);
-//                    toast.show();
-
-
     public void start(View view) {
         sequence.add(4);
         for (int i = 0; i < sequence.length(); i++) {
@@ -138,9 +130,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
                     sequence.restart();
-                    Toast toast = new Toast(this);
-                    toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
-
                 }
             }
         } else {
