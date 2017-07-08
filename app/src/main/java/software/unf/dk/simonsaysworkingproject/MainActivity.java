@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Sequence sequence;
     private ArrayList<Bulb> bulbList;
     private ArrayList<Integer> clicked;
+    private MediaPlayer green, orange, red, blue;
 
     Button playGreenButton;
     Button playOrangeButton;
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         start = (Button) findViewById(R.id.startButton);
         bulbList = new ArrayList<>();
+        green = MediaPlayer.create(this, R.raw.green);
+        orange = MediaPlayer.create(this, R.raw.orange);
+        red = MediaPlayer.create(this, R.raw.red);
+        blue = MediaPlayer.create(this, R.raw.blue);
 
         bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, this));
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, this));
@@ -93,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         save(3);
     }
 
+
     private void save(int j){
         Log.i("", "Hey");
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
@@ -103,6 +109,19 @@ public class MainActivity extends AppCompatActivity {
             clicked.add(bulbList.get(j).ID);
             for (int i = 0; i < clicked.size(); i++) {
                 if (sequence.get(i) == clicked.get(i)) {
+                    if (j == 0) {
+                        green.start();
+                    }
+                    if (j == 1) {
+                        orange.start();
+                    }
+                    if (j == 2) {
+                        red.start();
+                    }
+                    if (j == 3) {
+                        blue.start();
+                    }
+
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
