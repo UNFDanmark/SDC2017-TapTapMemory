@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
                     if (j == 3) {
                         blue.start();
                     }
-
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
