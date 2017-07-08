@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> clicked;
     private MediaPlayer green, orange, red, blue;
     private TextView points;
-    private int count;
+    private long count;
     private final int Toast_Color = 0xFFbfbfbf;
 
 
@@ -60,14 +60,13 @@ public class MainActivity extends AppCompatActivity {
         points = (TextView) findViewById(R.id.points);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        //Button newActivity = (Button) findViewById(R.id.startActivity);
-
 
     }
 
 
     public void start(View view) {
         sequence.add(4);
+
         for (int i = 0; i < sequence.length(); i++) {
             final int sequenceCount = sequence.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -77,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }, i * 1500);
+
         }
+
         clicked = new ArrayList<>();
 
 
@@ -125,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     count++;
                     points.setText("Points: " + count);
+                    Save.savePoints(count, getApplicationContext());
 
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
@@ -142,5 +144,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void menu(View view) {
         startActivity(new Intent(MainActivity.this, SecondActivity.class));
+    }
+
+    public void onPause() {
+        super.onPause();
+        Save.savePoints(count, getApplicationContext());
+    }
+
+    public void onResume() {
+        super.onResume();
+        count = Save.load(getApplicationContext());
+        points.setText(String.valueOf("Points: " + count));
     }
 }
