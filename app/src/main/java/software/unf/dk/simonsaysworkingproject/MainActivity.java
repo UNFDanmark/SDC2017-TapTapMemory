@@ -109,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
             clicked.add(bulbList.get(j).ID);
             for (int i = 0; i < clicked.size(); i++) {
                 if (sequence.get(i) == clicked.get(i)) {
+                    final MediaPlayer greenMP = MediaPlayer.create(this, R.raw.green);
+                    greenMP.start();
+
                 } else {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
