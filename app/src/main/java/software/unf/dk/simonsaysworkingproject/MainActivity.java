@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         sequence = new Sequence(0);
 
+        clicked = new ArrayList<>();
+
 
 
     }
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }, i * 1500);
         }
         clicked = new ArrayList<>();
+
 
     }
 
@@ -95,11 +98,9 @@ public class MainActivity extends AppCompatActivity {
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
         if (clicked.size() > sequence.length()) {
             alarmBeepMP.start();
-            Toast.makeText(getApplicationContext(), "Press Start", Toast.LENGTH_SHORT).show();
         }
         if (clicked.size() < sequence.length()) {
             clicked.add(bulbList.get(j).ID);
-            clicked.clear();
             for (int i = 0; i < clicked.size(); i++) {
                 if (sequence.get(i) == clicked.get(i)) {
                 } else {
