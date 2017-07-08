@@ -45,8 +45,8 @@ public class SecondActivity extends AppCompatActivity {
         orange = MediaPlayer.create(this, R.raw.orange);
         red = MediaPlayer.create(this, R.raw.red);
         blue = MediaPlayer.create(this, R.raw.blue);
-        //purple = MediaPlayer.create(this, R.raw.purple);
-        //yellow = MediaPlayer.create(this, R.raw.yellow);
+        purple = MediaPlayer.create(this, R.raw.alarm_beep);
+        yellow = MediaPlayer.create(this, R.raw.alarm_beep);
 
         bulbList2.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
         bulbList2.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
