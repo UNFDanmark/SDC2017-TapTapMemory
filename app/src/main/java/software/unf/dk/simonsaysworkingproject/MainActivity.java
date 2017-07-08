@@ -1,13 +1,18 @@
 package software.unf.dk.simonsaysworkingproject;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.os.CountDownTimer;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -32,8 +37,12 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> clicked;
     private MediaPlayer green, orange, red, blue;
     private TextView points;
+<<<<<<< Updated upstream
     private long count;
     private final int Toast_Color = 0xFFbfbfbf;
+=======
+    private int count;
+>>>>>>> Stashed changes
 
 
     @Override
@@ -63,6 +72,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+   /* public static class ToastActivity extends Activity {
+        AlertDialog dialog;
+        static CountDownTimer timer = null;
+        Toast toast;
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            toast = new Toast(this);
+            TextView textView = new TextView(this);
+            textView.setTextColor(Color.BLUE);
+            textView.setBackgroundColor(Color.TRANSPARENT);
+            textView.setTextSize(10);
+            textView.setText("NOPE.");
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+
+            toast.setView(textView);
+            timer = new CountDownTimer(10000, 1000) {
+                @Override
+                public void onTick(long l) {
+                    toast.show();
+                }
+
+                @Override
+                public void onFinish() {
+                    toast.cancel();
+                }
+            };
+        }
+
+}*/
 
     public void start(View view) {
         sequence.add(4);
@@ -104,6 +145,9 @@ public class MainActivity extends AppCompatActivity {
     private void save(int j) {
         Log.i("", "Hey");
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
+        Toast t = Toast.makeText(this, "bla", Toast.LENGTH_SHORT);
+        t.setGravity(Gravity.LEFT, 0, 0);
+        t.show();
         if (clicked.size() > sequence.length()) {
             alarmBeepMP.start();
         }
@@ -128,13 +172,13 @@ public class MainActivity extends AppCompatActivity {
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
                 } else {
-                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
                     sequence.restart();
                 }
             }
         } else {
-            Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
             alarmBeepMP.start();
             sequence.restart();
         }
