@@ -10,7 +10,6 @@ import java.util.Random;
 public class Sequence {
     ArrayList<Integer> sequence = new ArrayList<>();
     Random generator;
-//    int rnr = (generator.nextInt(4));
 
     public Sequence(int something) {
         generator = new Random();

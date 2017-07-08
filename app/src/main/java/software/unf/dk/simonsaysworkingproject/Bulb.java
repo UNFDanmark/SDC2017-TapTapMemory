@@ -1,6 +1,7 @@
 package software.unf.dk.simonsaysworkingproject;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -24,14 +25,12 @@ public class Bulb extends Intent {
     int on;
     int off;
     int ID;
-    MainActivity mA;
 
-    public Bulb(Button square, int bunny, int star, int identity, MainActivity x) {
+    public Bulb(Button square, int bunny, int star, int identity) {
         lightButton = square;
         on = bunny;
         off = star;
         ID = identity;
-        mA = x;
 
         lightButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
