@@ -156,4 +156,3 @@ public class MainActivity extends AppCompatActivity {
         points.setText(String.valueOf("Points: " + count));
     }
 }
-//
