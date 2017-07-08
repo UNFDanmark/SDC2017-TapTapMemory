@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer green, orange, red, blue;
     private TextView points;
     private int count;
+    private final int Toast_Color = 0xFFbfbfbf;
 
 
     @Override
@@ -125,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     alarmBeepMP.start();
                     sequence.restart();
+                    LinearLayout layout = new LinearLayout(this);
                 }
             }
         } else {
