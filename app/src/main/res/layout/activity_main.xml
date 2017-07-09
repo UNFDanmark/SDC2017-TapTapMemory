@@ -9,6 +9,15 @@
     tools:layout_editor_absoluteX="8dp"
     tools:context="software.unf.dk.simonsaysworkingproject.MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:text="0 POINTS" />
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,16 +73,17 @@
             android:layout_marginTop="50dp"
             android:onClick="start"
             android:text="Start" />
+
+        <TextView
+            android:id="@+id/highScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIGH SCORE: 0"
+            android:layout_below="@id/startButton"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
-        android:text="0 POINTS" />
+
 
     <ImageButton
         android:id="@+id/startActivity"

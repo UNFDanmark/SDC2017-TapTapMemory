@@ -37,12 +37,11 @@ public class ThirdActivity extends AppCompatActivity {
     private final int LIGHTGREEN_ON= 0xFF80ff00;
     private final int LIGHTGREEN_OFF = 0xFF51c205;
     private RelativeLayout relativeLay;
-
     private Sequence sequence3;
     private ArrayList<Bulb> bulbList3;
     private ArrayList<Integer> clicked3;
     private MediaPlayer green, orange, red, blue, purple, yellow, darkblue, pink, lightgreen;
-    private TextView points;
+    private TextView points, highscore3;
     private long count;
 
     @Override
@@ -61,7 +60,6 @@ public class ThirdActivity extends AppCompatActivity {
         darkblue = MediaPlayer.create(this, R.raw.tone7);
         pink = MediaPlayer.create(this, R.raw.tone8);
         lightgreen = MediaPlayer.create(this, R.raw.tone9);
-
         bulbList3.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
         bulbList3.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
         bulbList3.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
@@ -72,11 +70,9 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,7));
         bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,8));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay3);
-
+        highscore3 = (TextView) findViewById(R.id.highScore3);
         sequence3 = new Sequence(0, 9);
-
         clicked3 = new ArrayList<>();
-
         points = (TextView) findViewById(R.id.points);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
