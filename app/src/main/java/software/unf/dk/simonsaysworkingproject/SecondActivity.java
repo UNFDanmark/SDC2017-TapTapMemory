@@ -19,7 +19,7 @@ public class SecondActivity extends AppCompatActivity {
     private final int GREEN_ON = 0xFF00e600;
     private final int GREEN_OFF = 0xFF669900;
     private final int ORANGE_ON = 0xFFffbb33;
-    private final int ORANGE_OFF = 0xFFff8800;
+    private final int ORANGE_OFF = 0xFFe06500;
     private final int RED_ON = 0xFFff1a75;
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;
@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
     private final int PURPLE_ON = 0xFFff4081;
     private final int PURPLE_OFF = 0xFFaa66cc;
     private final int YELLOW_ON = 0xFFffff80;
-    private final int YELLOW_OFF = 0xFFffee33;
+    private final int YELLOW_OFF = 0xFFf0c000;
     private Sequence sequence2;
     private ArrayList<Bulb> bulbList2;
     private ArrayList<Integer> clicked2;
