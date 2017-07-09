@@ -93,9 +93,9 @@ public class ThirdActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    bulbList3.get(sequenceCount).blink(800);
+                    bulbList3.get(sequenceCount).blink(700);
                 }
-            }, i * 1100);
+            }, i * 900);
         }
         clicked3 = new ArrayList<>();
         new Handler().postDelayed(new Runnable() {
@@ -106,7 +106,7 @@ public class ThirdActivity extends AppCompatActivity {
                 }
 
             }
-        }, sequence3.length() * 1500);
+        }, sequence3.length() * 890);
     }
 
     public void save1(View view) {

@@ -85,9 +85,9 @@ public class SecondActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    bulbList2.get(sequenceCount).blink(900);
+                    bulbList2.get(sequenceCount).blink(800);
                 }
-            }, i * 1300);
+            }, i * 1100);
         }
         clicked2 = new ArrayList<>();
         new Handler().postDelayed(new Runnable() {
@@ -98,7 +98,7 @@ public class SecondActivity extends AppCompatActivity {
                 }
 
             }
-        }, sequence2.length() * 1500);
+        }, sequence2.length() * 1090);
     }
 
     public void save1(View view) {

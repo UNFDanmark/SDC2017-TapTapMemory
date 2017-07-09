@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    bulbList.get(sequenceCount).blink(1000);
+                    bulbList.get(sequenceCount).blink(900);
 
                 }
-            }, i * 1500);
+            }, i * 1300);
 
         }
         new Handler().postDelayed(new Runnable() {
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        }, sequence.length() * 1500);
+        }, sequence.length() * 1290);
 
         clicked = new ArrayList<>();
 
