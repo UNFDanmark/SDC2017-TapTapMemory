@@ -36,7 +36,7 @@ public class ThirdActivity extends AppCompatActivity {
     private final int PINK_OFF = 0xFFfcbd3;
     private final int LIGHTGREEN_ON= 0xFF55fc25;
     private final int LIGHTGREEN_OFF = 0xFF2bdb3d;
-
+    private RelativeLayout relativeLay;
 
     private Sequence sequence3;
     private ArrayList<Bulb> bulbList3;
@@ -52,15 +52,15 @@ public class ThirdActivity extends AppCompatActivity {
 
         start = (Button) findViewById(R.id.startButton);
         bulbList3 = new ArrayList<>();
-        green = MediaPlayer.create(this, R.raw.green);
-        orange = MediaPlayer.create(this, R.raw.orange);
-        red = MediaPlayer.create(this, R.raw.red);
-        blue = MediaPlayer.create(this, R.raw.blue);
+        green = MediaPlayer.create(this, R.raw.tone1);
+        orange = MediaPlayer.create(this, R.raw.tone2);
+        red = MediaPlayer.create(this, R.raw.tone3);
+        blue = MediaPlayer.create(this, R.raw.tone4);
         purple = MediaPlayer.create(this, R.raw.tone5);
-        yellow = MediaPlayer.create(this, R.raw.alarm_beep);
-        darkblue = MediaPlayer.create(this, R.raw.alarm_beep);
-        pink = MediaPlayer.create(this, R.raw.alarm_beep);
-        lightgreen = MediaPlayer.create(this, R.raw.alarm_beep);
+        yellow = MediaPlayer.create(this, R.raw.tone6);
+        darkblue = MediaPlayer.create(this, R.raw.tone7);
+        pink = MediaPlayer.create(this, R.raw.tone8);
+        lightgreen = MediaPlayer.create(this, R.raw.tone9);
 
         bulbList3.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
         bulbList3.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
@@ -71,6 +71,7 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF,5));
         bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,5));
         bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,5));
+        relativeLay = (RelativeLayout) findViewById(R.id.relativeLay);
 
         sequence3 = new Sequence(0, 6);
 
@@ -119,6 +120,18 @@ public class ThirdActivity extends AppCompatActivity {
         save(5);
     }
 
+    public void save7(View view) {
+        save(6);
+    }
+
+    public void save8(View view) {
+        save(7);
+    }
+
+    public void save9(View view) {
+        save(8);
+    }
+
     private void save(int j) {
         Log.i("", "Hey");
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
@@ -148,20 +161,20 @@ public class ThirdActivity extends AppCompatActivity {
                         yellow.start();
                     }
                     if (j == 6) {
-                        yellow.start();
+                        darkblue.start();
                     }
                     if (j == 7) {
-                        yellow.start();
+                        pink.start();
                     }
                     if (j == 8) {
-                        yellow.start();
+                        lightgreen.start();
                     }
                     count ++;
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, 760, 200);
+                    //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
                     t.show();
                     alarmBeepMP.start();
                     sequence3.restart();
@@ -169,7 +182,7 @@ public class ThirdActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, 760, 200);
+            //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
             sequence3.restart();
