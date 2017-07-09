@@ -26,40 +26,41 @@
             android:id="@+id/greenButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/points"
-            android:layout_marginTop="75dp"
-            android:layout_toLeftOf="@+id/orangeButton"
-            android:layout_toStartOf="@+id/orangeButton"
             android:background="@android:color/holo_green_dark"
-            android:onClick="save1" />
+            android:onClick="save1"
+            android:layout_alignBottom="@+id/orangeButton"
+            android:layout_toLeftOf="@+id/orangeButton"
+            android:layout_toStartOf="@+id/orangeButton" />
 
         <Button
             android:id="@+id/orangeButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_above="@+id/redButton"
-            android:layout_centerHorizontal="true"
             android:background="@android:color/holo_orange_dark"
-            android:onClick="save2" />
+            android:onClick="save2"
+            android:layout_above="@+id/blueButton"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/redButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/greenButton"
-            android:layout_toLeftOf="@+id/blueButton"
-            android:layout_toStartOf="@+id/blueButton"
             android:background="@android:color/holo_red_dark"
-            android:onClick="save3" />
+            android:onClick="save3"
+            android:layout_alignBottom="@+id/blueButton"
+            android:layout_toLeftOf="@+id/blueButton"
+            android:layout_toStartOf="@+id/blueButton" />
 
         <Button
             android:id="@+id/blueButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/orangeButton"
-            android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_blue_dark"
-            android:onClick="save4" />
+            android:onClick="save4"
+            android:layout_above="@+id/startButton"
+            android:layout_toRightOf="@+id/greenButton"
+            android:layout_toEndOf="@+id/greenButton"
+            android:layout_marginBottom="14dp" />
 
         <Button
             android:id="@+id/startButton"
@@ -94,10 +95,40 @@
             android:id="@+id/yellowButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/purpleButton"
-            android:layout_toEndOf="@+id/blueButton"
-            android:layout_toRightOf="@+id/blueButton"
             android:background="#ffee33"
-            android:onClick="save6" />
+            android:onClick="save6"
+            android:layout_alignBottom="@+id/blueButton"
+            android:layout_toRightOf="@+id/blueButton"
+            android:layout_toEndOf="@+id/blueButton" />
+
+        <Button
+            android:id="@+id/darkblueButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_above="@+id/orangeButton"
+            android:layout_alignLeft="@+id/greenButton"
+            android:layout_alignStart="@+id/greenButton"
+            android:onClick="save7"/>
+
+        <Button
+            android:id="@+id/pinkButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/colorAccent"
+            android:layout_alignBottom="@+id/darkblueButton"
+            android:layout_toRightOf="@+id/greenButton"
+            android:layout_toEndOf="@+id/greenButton"
+            android:onClick="save8"/>
+
+        <Button
+            android:id="@+id/lightgreenButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/purpleButton"
+            android:layout_toEndOf="@+id/pinkButton"
+            android:layout_toRightOf="@+id/pinkButton"
+            android:background="@android:color/holo_green_light"
+            android:onClick="save9"/>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
