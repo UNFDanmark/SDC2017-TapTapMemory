@@ -18,9 +18,9 @@ import java.util.ArrayList;
 
 public class ThirdActivity extends AppCompatActivity {
     private Button start;
-    private final int GREEN_ON = 0xFF00e600;
-    private final int GREEN_OFF = 0xFF669900;
-    private final int ORANGE_ON = 0xFFffbb33;
+    private final int GREEN_ON = 0xFF17bd05;
+    private final int GREEN_OFF = 0xFF107505;
+    private final int ORANGE_ON = 0xFFfca41f;
     private final int ORANGE_OFF = 0xFFff8800;
     private final int RED_ON = 0xFFff1a75;
     private final int RED_OFF = 0xFFcc0000;
@@ -34,8 +34,8 @@ public class ThirdActivity extends AppCompatActivity {
     private final int DARKBLUT_OFF = 0xFF2929ab;
     private final int PINK_ON = 0xFFc92999;
     private final int PINK_OFF = 0xFFdf05f7;
-    private final int LIGHTGREEN_ON= 0xFF55fc25;
-    private final int LIGHTGREEN_OFF = 0xFF2bdb3d;
+    private final int LIGHTGREEN_ON= 0xFF80ff00;
+    private final int LIGHTGREEN_OFF = 0xFF51c205;
     private RelativeLayout relativeLay;
 
     private Sequence sequence3;
