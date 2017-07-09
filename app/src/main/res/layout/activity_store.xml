@@ -55,7 +55,7 @@
             android:layout_below="@+id/pris"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
-            android:onClick="newSkin"
+            android:onClick="newLevel2"
             android:text="Ekstra level (9 buttons)" />
 
         <TextView

@@ -32,9 +32,9 @@ public class StoreActivity extends AppCompatActivity {
     public void newLevel(View view) {
         if (count >= 30) {
             startActivity(new Intent(StoreActivity.this, SecondActivity.class));
-            /*count -= 20;
+            count -= 20;
             System.out.println(count);
-            Log.i("Find mig", "Find mig"); */
+            Log.i("Find mig", "Find mig");
         } else {
             Toast.makeText(getApplicationContext(), "Not enough points", Toast.LENGTH_SHORT).show();
         }
