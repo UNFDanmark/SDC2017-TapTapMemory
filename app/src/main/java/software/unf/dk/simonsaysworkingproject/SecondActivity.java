@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -135,13 +136,17 @@ public class SecondActivity extends AppCompatActivity {
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
                 } else {
-                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+                    Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.LEFT, 385, 730);
+                    t.show();
                     alarmBeepMP.start();
                     sequence2.restart();
                 }
             }
         } else {
-            Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
+            Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
+            t.setGravity(Gravity.LEFT, 385, 730);
+            t.show();
             alarmBeepMP.start();
             sequence2.restart();
         }
