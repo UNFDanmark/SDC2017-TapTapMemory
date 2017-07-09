@@ -68,9 +68,9 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         bulbList3.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF,6));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,7));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,8));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay3);
 
         sequence3 = new Sequence(0, 9);
@@ -140,7 +140,7 @@ public class ThirdActivity extends AppCompatActivity {
             alarmBeepMP.start();
         }
         if (clicked3.size() < sequence3.length()) {
-            clicked3.add(bulbList3.get(j).ID);
+            clicked3.add(bulbList3.get(j).getID());
             for (int i = 0; i < clicked3.size(); i++) {
                 if (sequence3.get(i) == clicked3.get(i)) {
                     if (j == 0) {

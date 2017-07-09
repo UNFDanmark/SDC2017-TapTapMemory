@@ -77,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
     public void start(View view) {
         sequence.add(4);
         start.setEnabled(false);
+        for (Bulb b:bulbList) {
+            b.getLightButton().setEnabled(false);
+        }
         for (int i = 0; i < sequence.length(); i++) {
             final int sequenceCount = sequence.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -87,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, i * 1500);
 
+        }
+        for (Bulb b:bulbList) {
+            b.getLightButton().setEnabled(true);
         }
 
         clicked = new ArrayList<>();
@@ -117,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             alarmBeepMP.start();
         }
         if (clicked.size() < sequence.length()) {
-            clicked.add(bulbList.get(j).ID);
+            clicked.add(bulbList.get(j).getID());
             for (int i = 0; i < clicked.size(); i++) {
                 if (sequence.get(i) == clicked.get(i)) {
 

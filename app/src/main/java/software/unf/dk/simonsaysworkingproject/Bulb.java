@@ -21,10 +21,19 @@ import java.util.ArrayList;
 
 
 public class Bulb extends Intent {
-    Button lightButton;
-    int on;
-    int off;
-    int ID;
+    public Button getLightButton() {
+        return lightButton;
+    }
+
+    private Button lightButton;
+    private int on;
+    private int off;
+
+    public int getID() {
+        return ID;
+    }
+
+    private int ID;
 
     public Bulb(Button square, int bunny, int star, int identity) {
         lightButton = square;
@@ -49,6 +58,7 @@ public class Bulb extends Intent {
 
     public void blink(int k) {
         lightButton.setBackgroundColor(on);
+        lightButton.setEnabled(false);
         CountDownTimer timer = new CountDownTimer(k, 1000) {
             @Override
             public void onTick(long l) {
@@ -58,10 +68,12 @@ public class Bulb extends Intent {
             @Override
             public void onFinish() {
                 lightButton.setBackgroundColor(off);
+                lightButton.setEnabled(true);
 
             }
         };
         timer.start();
+
     }
 
 

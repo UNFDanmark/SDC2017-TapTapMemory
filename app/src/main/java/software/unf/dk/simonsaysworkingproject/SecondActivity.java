@@ -118,7 +118,7 @@ public class SecondActivity extends AppCompatActivity {
             alarmBeepMP.start();
         }
         if (clicked2.size() < sequence2.length()) {
-            clicked2.add(bulbList2.get(j).ID);
+            clicked2.add(bulbList2.get(j).getID());
             for (int i = 0; i < clicked2.size(); i++) {
                 if (sequence2.get(i) == clicked2.get(i)) {
                     if (j == 0) {
