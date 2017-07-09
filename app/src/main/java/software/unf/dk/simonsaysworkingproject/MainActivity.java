@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer green, orange, red, blue;
     private TextView points;
     private long count;
-    private final int Toast_Color = 0xFFbfbfbf;
+    private RelativeLayout relativeLay;
 
 
 
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
         bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
         bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
+        relativeLay = (RelativeLayout) findViewById(R.id.relativeLay);
 
         sequence = new Sequence(0, 4);
 
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                     Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, 385, 730);
+                    t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
                     t.show();
                     alarmBeepMP.start();
                     sequence.restart();
@@ -143,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, 385, 730);
+            t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
             sequence.restart();
