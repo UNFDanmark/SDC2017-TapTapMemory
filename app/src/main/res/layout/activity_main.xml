@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/startButton"
             android:layout_centerHorizontal="true"
-            android:text="HIGH SCORE: 0" />
+            android:text="High Score: 0" />
 
 
     </RelativeLayout>
