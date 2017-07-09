@@ -25,8 +25,8 @@ public class SecondActivity extends AppCompatActivity {
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;
     private final int BLUE_OFF = 0xFF0086b3;
-    private final int PURPLE_ON = 0xFFa829fc;
-    private final int PURPLE_OFF = 0xFF8108d1;
+    private final int PURPLE_ON = 0xFFb829f5;
+    private final int PURPLE_OFF = 0xFF8f29d4;
     private final int YELLOW_ON = 0xFFffff80;
     private final int YELLOW_OFF = 0xFFe8d208;
     private Sequence sequence2;

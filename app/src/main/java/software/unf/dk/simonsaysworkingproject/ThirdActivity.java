@@ -20,21 +20,19 @@ public class ThirdActivity extends AppCompatActivity {
     private final int GREEN_ON = 0xFF00e600;
     private final int GREEN_OFF = 0xFF669900;
     private final int ORANGE_ON = 0xFFffbb33;
-    private final int ORANGE_OFF = 0xFFff8800;
+    private final int ORANGE_OFF = 0xFFeda808;
     private final int RED_ON = 0xFFff1a75;
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;
     private final int BLUE_OFF = 0xFF0086b3;
-    private final int PURPLE_ON = 0xFFff4081;
-    private final int PURPLE_OFF = 0xFFaa66cc;
+    private final int PURPLE_ON = 0xFFb829f5;
+    private final int PURPLE_OFF = 0xFF8f29d4;
     private final int YELLOW_ON = 0xFFffff80;
-    private final int YELLOW_OFF = 0xFFffee33;
-    private final int DARKBLUE_ON =;
-    private final int DARKBLUT_OFF =;
-    private final int PINK_ON =;
-    private final int PINK_OFF =;
-    private final int LIGHTGREEN_ON=;
-    private final int LIGHTGREEN_OFF =;
+    private final int YELLOW_OFF = 0xFFe8d208;
+    private final int DARKBLUE_ON = ;
+    private final int DARKBLUE_OFF = ;
+    private final int PINK_ON = ;
+    private final int PINK_OFF = ;
     private Sequence sequence3;
     private ArrayList<Bulb> bulbList3;
     private ArrayList<Integer> clicked3;
@@ -65,9 +63,9 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         bulbList3.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF, 6));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF, 7));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF, 8));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), YELLOW_ON, YELLOW_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), YELLOW_ON, YELLOW_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), YELLOW_ON, YELLOW_OFF,5));
 
         sequence3 = new Sequence(0, 6);
 
@@ -116,18 +114,6 @@ public class ThirdActivity extends AppCompatActivity {
         save(5);
     }
 
-    public void save7(View view) {
-        save(6);
-    }
-
-    public void save8(View view) {
-        save(7);
-    }
-
-    public void save9(View view) {
-        save(8);
-    }
-
     private void save(int j) {
         Log.i("", "Hey");
         final MediaPlayer alarmBeepMP = MediaPlayer.create(this, R.raw.alarm_beep);
@@ -155,15 +141,6 @@ public class ThirdActivity extends AppCompatActivity {
                     }
                     if (j == 5) {
                         yellow.start();
-                    }
-                    if (j == 6) {
-                        darkblue.start();
-                    }
-                    if (j == 7) {
-                        pink.start();
-                    }
-                    if (j == 8) {
-                        lightgreen.start();
                     }
                     count ++;
                     points.setText("Points: " + count);
