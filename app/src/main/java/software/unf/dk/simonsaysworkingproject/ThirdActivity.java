@@ -58,9 +58,9 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         bulbList3.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), _ON, YELLOW_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), YELLOW_ON, YELLOW_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), YELLOW_ON, YELLOW_OFF,5));
 
         sequence3 = new Sequence(0, 6);
 
