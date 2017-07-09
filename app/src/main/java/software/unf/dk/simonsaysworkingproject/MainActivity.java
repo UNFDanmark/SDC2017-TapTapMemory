@@ -39,10 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Bulb> bulbList;
     private ArrayList<Integer> clicked;
     private MediaPlayer green, orange, red, blue;
-    private TextView points;
+    private TextView points, highScore;
     private long count;
     private RelativeLayout relativeLay;
-
 
 
     @Override
@@ -62,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
         bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay);
+        highScore = (TextView) findViewById(R.id.highScore);
+        highScore.setText("High Score: " + Save.loadHighScore(this) + "");
 
 
         sequence = new Sequence(0, 4);
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     public void start(View view) {
         sequence.add(4);
         start.setEnabled(false);
-        for (Bulb b:bulbList) {
+        for (Bulb b : bulbList) {
             b.getLightButton().setEnabled(false);
         }
         for (int i = 0; i < sequence.length(); i++) {
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                for (Bulb b:bulbList) {
+                for (Bulb b : bulbList) {
                     b.getLightButton().setEnabled(true);
                 }
 
@@ -160,12 +161,17 @@ public class MainActivity extends AppCompatActivity {
             t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
-
             sequence.restart();
         }
-        if(sequence.length() <= clicked.size()){
+        if (sequence.length() <= clicked.size()) {
             start.setEnabled(true);
         }
+        int currentHighScore = Save.loadHighScore(this);
+        long countScore = Save.loadHighScore(getApplicationContext());
+        if (currentHighScore < sequence.length()) {
+            Save.saveHighScore(sequence.length(), this);
+        }
+        highScore.setText(String.valueOf("High Score: " + countScore));
 
     }
 
@@ -183,4 +189,5 @@ public class MainActivity extends AppCompatActivity {
         count = Save.load(getApplicationContext());
         points.setText(String.valueOf("Points: " + count));
     }
+
 }

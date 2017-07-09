@@ -44,4 +44,38 @@ public class Save {
         return sharedPref.getBoolean("level3Bought", false);
     }
 
+    public static void saveHighScore(int isBought, Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("HighScore1", isBought);
+        editor.commit();
+    }
+
+    public static int loadHighScore(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
+        return sharedPref.getInt("HighScore1", 0);
+    }
+    public static void saveHighScore2(int isBought, Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("HighScore2", isBought);
+        editor.commit();
+    }
+
+    public static int loadHighScore2(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
+        return sharedPref.getInt("HighScore2", 0);
+    }
+    public static void saveHighScore3(int isBought, Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("HighScore3", isBought);
+        editor.commit();
+    }
+
+    public static int loadHighScore3(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(String.valueOf("software.unf.dk.simonsaysworkingproject.prefs"), Context.MODE_PRIVATE);
+        return sharedPref.getInt("HighScore3", 0);
+    }
+
 }

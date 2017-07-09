@@ -37,13 +37,12 @@ public class ThirdActivity extends AppCompatActivity {
     private final int LIGHTGREEN_ON= 0xFF80ff00;
     private final int LIGHTGREEN_OFF = 0xFF51c205;
     private RelativeLayout relativeLay;
-
     private Sequence sequence3;
     private ArrayList<Bulb> bulbList3;
     private ArrayList<Integer> clicked3;
     private MediaPlayer green, orange, red, blue, purple, yellow, darkblue, pink, lightgreen;
-    private TextView points;
-    private long count;
+    private TextView points, highScore;
+    private long count, countscore3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +71,9 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,7));
         bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,8));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay3);
+        highScore = (TextView) findViewById(R.id.highScore3);
+        highScore.setText("High Score: " + Save.loadHighScore3(this) + "");
+
 
         sequence3 = new Sequence(0, 9);
 
@@ -201,6 +203,12 @@ public class ThirdActivity extends AppCompatActivity {
         if(sequence3.length() <= clicked3.size()){
             start.setEnabled(true);
         }
+        int currentHighScore3 = Save.loadHighScore3(this);
+        long countScore3 = Save.loadHighScore3(getApplicationContext());
+        if (currentHighScore3 < sequence3.length()) {
+            Save.saveHighScore3(sequence3.length(), this);
+        }
+        highScore.setText(String.valueOf("High Score: " + countScore3));
 
     }
 

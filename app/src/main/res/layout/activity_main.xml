@@ -16,11 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp"
-        android:text="0 POINTS"
-        android:textAllCaps="false"
-        android:textColor="?android:attr/textColorTertiary"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:text="0 POINTS" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -55,7 +51,6 @@
             android:layout_toEndOf="@+id/greenButton"
             android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_orange_dark"
-            android:elevation="0dp"
             android:onClick="save2" />
 
         <Button
@@ -89,8 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/startButton"
             android:layout_centerHorizontal="true"
-            android:text="HIGH SCORE: 0"
-            android:textStyle="bold" />
+            android:text="HIGH SCORE: 0" />
 
 
     </RelativeLayout>

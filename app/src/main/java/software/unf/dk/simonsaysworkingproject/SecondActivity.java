@@ -35,8 +35,8 @@ public class SecondActivity extends AppCompatActivity {
     private ArrayList<Bulb> bulbList2;
     private ArrayList<Integer> clicked2;
     private MediaPlayer green, orange, red, blue, purple, yellow;
-    private TextView points;
-    private long count;
+    private TextView points, highScore;
+    private long count, countscore2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,9 @@ public class SecondActivity extends AppCompatActivity {
         bulbList2.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList2.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay2);
+        highScore = (TextView) findViewById(R.id.highScore2);
+        highScore.setText("High Score: " + Save.loadHighScore2(this) + "");
+
 
 
         sequence2 = new Sequence(0, 6);
@@ -172,6 +175,12 @@ public class SecondActivity extends AppCompatActivity {
         if(sequence2.length() <= clicked2.size()){
             start.setEnabled(true);
         }
+        int currentHighScore2 = Save.loadHighScore2(this);
+        long countScore2 = Save.loadHighScore2(getApplicationContext());
+        if (currentHighScore2 < sequence2.length()) {
+            Save.saveHighScore2(sequence2.length(), this);
+        }
+        highScore.setText(String.valueOf("High Score: " + countScore2));
 
     }
 
