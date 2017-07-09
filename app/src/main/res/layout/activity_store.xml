@@ -47,5 +47,24 @@
             android:layout_below="@+id/button2"
             android:layout_centerHorizontal="true"
             android:text="Pris: 1000" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pris"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:onClick="newSkin"
+            android:text="Ekstra level (9 buttons)" />
+
+        <TextView
+            android:id="@+id/pris2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/pris"
+            android:layout_alignRight="@+id/pris"
+            android:layout_below="@+id/button"
+            android:text="Pris: 2000" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

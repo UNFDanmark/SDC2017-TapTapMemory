@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    bulbList.get(sequenceCount).blink();
+                    bulbList.get(sequenceCount).blink(1000);
 
                 }
             }, i * 1500);
