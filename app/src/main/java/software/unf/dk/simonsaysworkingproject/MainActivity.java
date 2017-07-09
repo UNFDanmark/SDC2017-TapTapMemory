@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Bulb> bulbList;
     private ArrayList<Integer> clicked;
     private MediaPlayer green, orange, red, blue;
-    private TextView points;
-    private long count;
+    private TextView points, highscore;
+    private long count, theHighscore;
     private RelativeLayout relativeLay;
 
 
@@ -56,17 +56,14 @@ public class MainActivity extends AppCompatActivity {
         orange = MediaPlayer.create(this, R.raw.tone2);
         red = MediaPlayer.create(this, R.raw.tone3);
         blue = MediaPlayer.create(this, R.raw.tone4);
-
         bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
         bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
         bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay);
-
+        highscore = (TextView) findViewById(R.id.highScore);
         sequence = new Sequence(0, 4);
-
         clicked = new ArrayList<>();
-
         points = (TextView) findViewById(R.id.points);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -161,12 +158,13 @@ public class MainActivity extends AppCompatActivity {
             t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
+            //theHighscore = sequence.length();
             sequence.restart();
         }
         if(sequence.length() <= clicked.size()){
             start.setEnabled(true);
         }
-
+        //highscore.setText("highscore" + theHighscore);
     }
 
     public void menu(View view) {
