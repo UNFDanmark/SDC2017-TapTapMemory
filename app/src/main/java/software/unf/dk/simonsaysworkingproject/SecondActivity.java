@@ -19,8 +19,8 @@ public class SecondActivity extends AppCompatActivity {
     private Button start;
     private final int GREEN_ON = 0xFF00e600;
     private final int GREEN_OFF = 0xFF669900;
-    private final int ORANGE_ON = 0xFFeda808;
-    private final int ORANGE_OFF = 0xFFed8e00;
+    private final int ORANGE_ON = 0xFFffbb33;
+    private final int ORANGE_OFF = 0xFFff8800;
     private final int RED_ON = 0xFFff1a75;
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;

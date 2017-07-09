@@ -20,7 +20,7 @@ public class ThirdActivity extends AppCompatActivity {
     private final int GREEN_ON = 0xFF00e600;
     private final int GREEN_OFF = 0xFF669900;
     private final int ORANGE_ON = 0xFFffbb33;
-    private final int ORANGE_OFF = 0xFFeda808;
+    private final int ORANGE_OFF = 0xFFff8800;
     private final int RED_ON = 0xFFff1a75;
     private final int RED_OFF = 0xFFcc0000;
     private final int BLUE_ON = 0xFF66d9ff;
@@ -29,10 +29,13 @@ public class ThirdActivity extends AppCompatActivity {
     private final int PURPLE_OFF = 0xFF8f29d4;
     private final int YELLOW_ON = 0xFFffff80;
     private final int YELLOW_OFF = 0xFFe8d208;
-    private final int DARKBLUE_ON = ;
-    private final int DARKBLUE_OFF = ;
-    private final int PINK_ON = ;
-    private final int PINK_OFF = ;
+    private final int DARKBLUE_ON = 0xFF2952f7;
+    private final int DARKBLUT_OFF = 0xFF2929ab;
+    private final int PINK_ON = 0xFFc92999;
+    private final int PINK_OFF = 0xFFfcbd3;
+    private final int LIGHTGREEN_ON= 0xFF55fc25;
+    private final int LIGHTGREEN_OFF = 0xFF2bdb3d;
+
     private Sequence sequence3;
     private ArrayList<Bulb> bulbList3;
     private ArrayList<Integer> clicked3;
@@ -63,9 +66,9 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         bulbList3.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), YELLOW_ON, YELLOW_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,5));
 
         sequence3 = new Sequence(0, 6);
 
