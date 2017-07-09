@@ -70,38 +70,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-   /* public static class ToastActivity extends Activity {
-        AlertDialog dialog;
-        static CountDownTimer timer = null;
-        Toast toast;
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-
-            toast = new Toast(this);
-            TextView textView = new TextView(this);
-            textView.setTextColor(Color.BLUE);
-            textView.setBackgroundColor(Color.TRANSPARENT);
-            textView.setTextSize(10);
-            textView.setText("NOPE.");
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-
-            toast.setView(textView);
-            timer = new CountDownTimer(10000, 1000) {
-                @Override
-                public void onTick(long l) {
-                    toast.show();
-                }
-
-                @Override
-                public void onFinish() {
-                    toast.cancel();
-                }
-            };
-        }
-
-}*/
-
     public void start(View view) {
         sequence.add(4);
 
@@ -166,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
                 } else {
-//                    Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.LEFT, 385, 730);
                     t.show();
@@ -175,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         } else {
-//            Toast.makeText(getApplicationContext(), "NOPE", Toast.LENGTH_SHORT).show();
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
             t.setGravity(Gravity.LEFT, 385, 730);
             t.show();
