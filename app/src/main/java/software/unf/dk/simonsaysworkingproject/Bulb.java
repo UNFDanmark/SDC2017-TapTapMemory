@@ -28,6 +28,7 @@ public class Bulb extends Intent {
     private Button lightButton;
     private int on;
     private int off;
+    private MediaPlayer sound;
 
     public int getID() {
         return ID;
@@ -35,17 +36,19 @@ public class Bulb extends Intent {
 
     private int ID;
 
-    public Bulb(Button square, int bunny, int star, int identity) {
+    public Bulb(Button square, int bunny, int star, int identity, MediaPlayer tone) {
         lightButton = square;
         on = bunny;
         off = star;
         ID = identity;
+        sound = tone;
 
         lightButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     lightButton.setBackgroundColor(on);
+
                     return false;
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     lightButton.setBackgroundColor(off);
@@ -58,6 +61,7 @@ public class Bulb extends Intent {
 
     public void blink(int k) {
         lightButton.setBackgroundColor(on);
+        sound.start();
         CountDownTimer timer = new CountDownTimer(k, 1000) {
             @Override
             public void onTick(long l) {

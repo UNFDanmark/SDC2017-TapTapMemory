@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
         red = MediaPlayer.create(this, R.raw.tone3);
         blue = MediaPlayer.create(this, R.raw.tone4);
 
-        bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
-        bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
-        bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
-        bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
+        bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, green));
+        bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, orange));
+        bulbList.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2, red));
+        bulbList.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3, blue));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay);
         highScore = (TextView) findViewById(R.id.highScore);
         highScore.setText("High Score: " + Save.loadHighScore(this) + "");

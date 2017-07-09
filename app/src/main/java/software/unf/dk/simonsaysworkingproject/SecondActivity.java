@@ -52,12 +52,12 @@ public class SecondActivity extends AppCompatActivity {
         purple = MediaPlayer.create(this, R.raw.tone5);
         yellow = MediaPlayer.create(this, R.raw.tone6);
 
-        bulbList2.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
-        bulbList2.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
-        bulbList2.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
-        bulbList2.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
-        bulbList2.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
-        bulbList2.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
+        bulbList2.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, green));
+        bulbList2.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, orange));
+        bulbList2.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2, red));
+        bulbList2.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3, blue));
+        bulbList2.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4, purple));
+        bulbList2.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF, 5, yellow));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay2);
         highScore = (TextView) findViewById(R.id.highScore2);
         highScore.setText("High Score: " + Save.loadHighScore2(this) + "");

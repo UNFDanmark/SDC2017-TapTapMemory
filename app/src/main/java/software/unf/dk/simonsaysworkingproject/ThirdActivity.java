@@ -61,15 +61,15 @@ public class ThirdActivity extends AppCompatActivity {
         pink = MediaPlayer.create(this, R.raw.tone8);
         lightgreen = MediaPlayer.create(this, R.raw.tone9);
 
-        bulbList3.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF,6));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,7));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,8));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0, green));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1, orange));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.redButton), RED_ON, RED_OFF, 2, red));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3, blue));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4, purple));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF, 5, yellow));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF, 6, darkblue));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF, 7, pink));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF, 8, lightgreen));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay3);
         highScore = (TextView) findViewById(R.id.highScore3);
         highScore.setText("High Score: " + Save.loadHighScore3(this) + "");
