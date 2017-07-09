@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="software.unf.dk.simonsaysworkingproject.StartActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/TapTap_start_1"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="75dp" />
 </android.support.constraint.ConstraintLayout>
