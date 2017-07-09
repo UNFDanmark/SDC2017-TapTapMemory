@@ -76,13 +76,16 @@
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/redButton"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
+            android:background="@color/colorPrimaryDark"
             android:onClick="start"
-            android:text="Start" />
+            android:text="Start"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/highScore"
@@ -90,7 +93,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/startButton"
             android:layout_centerHorizontal="true"
-            android:text="HIGH SCORE: 0" />
+            android:text="HIGH SCORE: 0"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
@@ -102,7 +106,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp"
-        android:text="0 POINTS" />
+        android:text="0 POINTS"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/imageButton"

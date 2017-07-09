@@ -17,14 +17,17 @@
 
         <Button
             android:id="@+id/level2"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:text="Ekstra level (6 buttons)"
-            android:onClick="newLevel"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="21dp" />
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="21dp"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="newLevel"
+            android:text="Ekstra level (6 buttons)"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/pris"
@@ -36,14 +39,17 @@
 
         <Button
             android:id="@+id/level3"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/pris"
             android:layout_marginTop="17dp"
+            android:background="@color/colorPrimaryDark"
             android:onClick="newLevel2"
             android:text="Ekstra level (9 buttons)"
-            android:layout_below="@+id/pris"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/pris2"
@@ -55,14 +61,15 @@
             android:text="Pris: 2500" />
     </RelativeLayout>
 
-        <TextView
-            android:id="@+id/points2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="53dp"
-            android:text="0 POINTS" />
+    <TextView
+        android:id="@+id/points2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:text="0 POINTS"
+        android:textStyle="bold" />
          <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"

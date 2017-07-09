@@ -16,7 +16,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp"
-        android:text="0 POINTS" />
+        android:text="0 POINTS"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorTertiary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -51,6 +55,7 @@
             android:layout_toEndOf="@+id/greenButton"
             android:layout_toRightOf="@+id/greenButton"
             android:background="@android:color/holo_orange_dark"
+            android:elevation="0dp"
             android:onClick="save2" />
 
         <Button
@@ -66,13 +71,17 @@
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/redButton"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
+            android:background="@color/colorPrimaryDark"
             android:onClick="start"
-            android:text="Start" />
+            android:text="Start"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/highScore"
@@ -80,7 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/startButton"
             android:layout_centerHorizontal="true"
-            android:text="HIGH SCORE: 0" />
+            android:text="HIGH SCORE: 0"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
