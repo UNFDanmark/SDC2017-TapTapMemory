@@ -74,6 +74,7 @@ public class SecondActivity extends AppCompatActivity {
 
     public void start(View view) {
         sequence2.add(6);
+        start.setEnabled(false);
         for (int i = 0; i < sequence2.length(); i++) {
             final int sequenceCount = sequence2.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -156,6 +157,9 @@ public class SecondActivity extends AppCompatActivity {
             t.show();
             alarmBeepMP.start();
             sequence2.restart();
+        }
+        if(sequence2.length() <= clicked2.size()){
+            start.setEnabled(true);
         }
 
     }

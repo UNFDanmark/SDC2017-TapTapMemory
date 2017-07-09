@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void start(View view) {
         sequence.add(4);
-
+        start.setEnabled(false);
         for (int i = 0; i < sequence.length(); i++) {
             final int sequenceCount = sequence.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         clicked = new ArrayList<>();
-
 
     }
 
@@ -151,6 +150,9 @@ public class MainActivity extends AppCompatActivity {
             t.show();
             alarmBeepMP.start();
             sequence.restart();
+        }
+        if(sequence.length() <= clicked.size()){
+            start.setEnabled(true);
         }
 
     }

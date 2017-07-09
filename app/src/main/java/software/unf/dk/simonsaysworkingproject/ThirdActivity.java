@@ -84,6 +84,7 @@ public class ThirdActivity extends AppCompatActivity {
 
     public void start(View view) {
         sequence3.add(9);
+        start.setEnabled(false);
         for (int i = 0; i < sequence3.length(); i++) {
             final int sequenceCount = sequence3.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -186,6 +187,9 @@ public class ThirdActivity extends AppCompatActivity {
             t.show();
             alarmBeepMP.start();
             sequence3.restart();
+        }
+        if(sequence3.length() <= clicked3.size()){
+            start.setEnabled(true);
         }
 
     }
