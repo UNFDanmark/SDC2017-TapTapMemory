@@ -30,8 +30,8 @@ public class StoreActivity extends AppCompatActivity {
         pris2 = (TextView) findViewById(R.id.pris2);
         level2 = (Button) findViewById(R.id.level2);
         level3 = (Button) findViewById(R.id.level3);
-        level2pris = 1;
-        level3pris = 2;
+        level2pris = 10;
+        level3pris = 20;
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
@@ -51,6 +51,17 @@ public class StoreActivity extends AppCompatActivity {
         }
     }
 
+    public void newLevel2(View view) {
+        if (count >= level3pris) {
+            startActivity(new Intent(StoreActivity.this, ThirdActivity.class));
+            count -= level3pris;
+            Save.savePoints(count, getApplicationContext());
+            Save.saveLevel3(true, this);
+        } else {
+            Toast.makeText(getApplicationContext(), "Not enough points", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void onResume() {
         super.onResume();
         count = Save.load(getApplicationContext());
@@ -58,17 +69,14 @@ public class StoreActivity extends AppCompatActivity {
         boolean level2Bought = Save.loadLevel2(this);
         if (level2Bought) {
             level2pris = 0;
+            pris.setText("Bought");
         }
-    }
+        boolean level3Bought = Save.loadLevel3(this);
+        if (level3Bought) {
+            level3pris = 0;
+            pris2.setText("Bought");
+        }
 
-    public void newLevel2(View view) {
-        if (count >= 0) {
-            startActivity(new Intent(StoreActivity.this, ThirdActivity.class));
-            //count -= 50;
-            Save.savePoints(count, getApplicationContext());
-        } else {
-            Toast.makeText(getApplicationContext(), "Not enough points", Toast.LENGTH_SHORT).show();
-        }
     }
 
 }
