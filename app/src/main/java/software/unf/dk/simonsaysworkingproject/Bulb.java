@@ -58,7 +58,6 @@ public class Bulb extends Intent {
 
     public void blink(int k) {
         lightButton.setBackgroundColor(on);
-        lightButton.setEnabled(false);
         CountDownTimer timer = new CountDownTimer(k, 1000) {
             @Override
             public void onTick(long l) {
@@ -68,7 +67,6 @@ public class Bulb extends Intent {
             @Override
             public void onFinish() {
                 lightButton.setBackgroundColor(off);
-                lightButton.setEnabled(true);
 
             }
         };

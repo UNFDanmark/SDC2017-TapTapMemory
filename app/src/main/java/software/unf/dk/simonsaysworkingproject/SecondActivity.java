@@ -75,6 +75,7 @@ public class SecondActivity extends AppCompatActivity {
     public void start(View view) {
         sequence2.add(6);
         start.setEnabled(false);
+        start.setEnabled(false);
         for (int i = 0; i < sequence2.length(); i++) {
             final int sequenceCount = sequence2.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -85,6 +86,15 @@ public class SecondActivity extends AppCompatActivity {
             }, i * 1300);
         }
         clicked2 = new ArrayList<>();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                for (Bulb b:bulbList2) {
+                    b.getLightButton().setEnabled(true);
+                }
+
+            }
+        }, sequence2.length() * 1500);
     }
 
     public void save1(View view) {

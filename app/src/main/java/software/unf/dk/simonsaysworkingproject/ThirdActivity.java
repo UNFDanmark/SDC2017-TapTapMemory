@@ -85,6 +85,7 @@ public class ThirdActivity extends AppCompatActivity {
     public void start(View view) {
         sequence3.add(9);
         start.setEnabled(false);
+        start.setEnabled(false);
         for (int i = 0; i < sequence3.length(); i++) {
             final int sequenceCount = sequence3.get(i);
             new Handler().postDelayed(new Runnable() {
@@ -95,6 +96,15 @@ public class ThirdActivity extends AppCompatActivity {
             }, i * 1100);
         }
         clicked3 = new ArrayList<>();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                for (Bulb b:bulbList3) {
+                    b.getLightButton().setEnabled(true);
+                }
+
+            }
+        }, sequence3.length() * 1500);
     }
 
     public void save1(View view) {

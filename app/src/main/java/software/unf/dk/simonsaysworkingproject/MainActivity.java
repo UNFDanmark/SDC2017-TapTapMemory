@@ -91,9 +91,15 @@ public class MainActivity extends AppCompatActivity {
             }, i * 1500);
 
         }
-        for (Bulb b:bulbList) {
-            b.getLightButton().setEnabled(true);
-        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                for (Bulb b:bulbList) {
+                    b.getLightButton().setEnabled(true);
+                }
+
+            }
+        }, sequence.length() * 1500);
 
         clicked = new ArrayList<>();
 
