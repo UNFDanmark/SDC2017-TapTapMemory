@@ -33,7 +33,7 @@ public class ThirdActivity extends AppCompatActivity {
     private final int DARKBLUE_ON = 0xFF2952f7;
     private final int DARKBLUT_OFF = 0xFF2929ab;
     private final int PINK_ON = 0xFFc92999;
-    private final int PINK_OFF = 0xFFfcbd3;
+    private final int PINK_OFF = 0xFFdf05f7;
     private final int LIGHTGREEN_ON= 0xFF55fc25;
     private final int LIGHTGREEN_OFF = 0xFF2bdb3d;
     private RelativeLayout relativeLay;
@@ -68,10 +68,10 @@ public class ThirdActivity extends AppCompatActivity {
         bulbList3.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         bulbList3.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList3.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF,6));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,7));
-        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,8));
-        //relativeLay = (RelativeLayout) findViewById(R.id.relativeLay);
+        bulbList3.add(new Bulb((Button) findViewById(R.id.darkblueButton), DARKBLUE_ON, DARKBLUT_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.pinkButton), PINK_ON, PINK_OFF,5));
+        bulbList3.add(new Bulb((Button) findViewById(R.id.lightgreenButton), LIGHTGREEN_ON, LIGHTGREEN_OFF,5));
+        relativeLay = (RelativeLayout) findViewById(R.id.relativeLay3);
 
         sequence3 = new Sequence(0, 9);
 
@@ -173,8 +173,8 @@ public class ThirdActivity extends AppCompatActivity {
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
                 } else {
-                    Toast t = Toast.makeText(this, "WRONG", Toast.LENGTH_SHORT);
-                    //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+                    Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
                     t.show();
                     alarmBeepMP.start();
                     sequence3.restart();
@@ -182,7 +182,7 @@ public class ThirdActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+            t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
             sequence3.restart();
