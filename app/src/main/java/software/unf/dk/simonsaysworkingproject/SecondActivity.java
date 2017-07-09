@@ -30,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
     private final int PURPLE_OFF = 0xFF8f29d4;
     private final int YELLOW_ON = 0xFFffff80;
     private final int YELLOW_OFF = 0xFFe8d208;
+    private RelativeLayout relativeLay;
     private Sequence sequence2;
     private ArrayList<Bulb> bulbList2;
     private ArrayList<Integer> clicked2;
@@ -57,6 +58,7 @@ public class SecondActivity extends AppCompatActivity {
         bulbList2.add(new Bulb((Button) findViewById(R.id.blueButton), BLUE_ON, BLUE_OFF, 3));
         bulbList2.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList2.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
+        relativeLay = (RelativeLayout) findViewById(R.id.relativeLay2);
 
         sequence2 = new Sequence(0, 6);
 
@@ -140,8 +142,9 @@ public class SecondActivity extends AppCompatActivity {
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
                 } else {
-                    Toast t = Toast.makeText(this, "WRONG", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, 760, 200);
+                    Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+
                     t.show();
                     alarmBeepMP.start();
                     sequence2.restart();
@@ -149,7 +152,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, 760, 200);
+            t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
             sequence2.restart();
