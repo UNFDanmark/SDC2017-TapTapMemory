@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static software.unf.dk.simonsaysworkingproject.R.raw.tone1;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button start;
@@ -50,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
         start = (Button) findViewById(R.id.startButton);
         bulbList = new ArrayList<>();
-        green = MediaPlayer.create(this, R.raw.green);
-        orange = MediaPlayer.create(this, R.raw.orange);
-        red = MediaPlayer.create(this, R.raw.red);
-        blue = MediaPlayer.create(this, R.raw.blue);
+        green = MediaPlayer.create(this, R.raw.tone1);
+        orange = MediaPlayer.create(this, R.raw.tone2);
+        red = MediaPlayer.create(this, R.raw.tone3);
+        blue = MediaPlayer.create(this, R.raw.tone4);
 
         bulbList.add(new Bulb((Button) findViewById(R.id.greenButton), GREEN_ON, GREEN_OFF, 0));
         bulbList.add(new Bulb((Button) findViewById(R.id.orangeButton), ORANGE_ON, ORANGE_OFF, 1));
@@ -137,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+                    //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
                     t.show();
                     alarmBeepMP.start();
                     sequence.restart();
@@ -145,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+            //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
             sequence.restart();

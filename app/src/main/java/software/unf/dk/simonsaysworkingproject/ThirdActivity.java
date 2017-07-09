@@ -56,7 +56,7 @@ public class ThirdActivity extends AppCompatActivity {
         orange = MediaPlayer.create(this, R.raw.orange);
         red = MediaPlayer.create(this, R.raw.red);
         blue = MediaPlayer.create(this, R.raw.blue);
-        purple = MediaPlayer.create(this, R.raw.alarm_beep);
+        purple = MediaPlayer.create(this, R.raw.tone5);
         yellow = MediaPlayer.create(this, R.raw.alarm_beep);
         darkblue = MediaPlayer.create(this, R.raw.alarm_beep);
         pink = MediaPlayer.create(this, R.raw.alarm_beep);
@@ -148,12 +148,21 @@ public class ThirdActivity extends AppCompatActivity {
                     if (j == 5) {
                         yellow.start();
                     }
+                    if (j == 6) {
+                        yellow.start();
+                    }
+                    if (j == 7) {
+                        yellow.start();
+                    }
+                    if (j == 8) {
+                        yellow.start();
+                    }
                     count ++;
                     points.setText("Points: " + count);
                     Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+                    //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
                     t.show();
                     alarmBeepMP.start();
                     sequence3.restart();
@@ -161,7 +170,7 @@ public class ThirdActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+            //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
             sequence3.restart();

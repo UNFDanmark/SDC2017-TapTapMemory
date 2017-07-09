@@ -66,6 +66,9 @@ public class SecondActivity extends AppCompatActivity {
         points = (TextView) findViewById(R.id.points);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        points.setText(String.valueOf("Points: " + count));
+
     }
 
     public void start(View view) {
@@ -139,7 +142,7 @@ public class SecondActivity extends AppCompatActivity {
                     Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+                    //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
                     t.show();
                     alarmBeepMP.start();
                     sequence2.restart();
@@ -147,7 +150,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+            //t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
             t.show();
             alarmBeepMP.start();
             sequence2.restart();
