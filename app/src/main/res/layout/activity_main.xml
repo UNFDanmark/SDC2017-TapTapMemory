@@ -5,12 +5,12 @@
     android:id="@+id/relativeLay"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:layout_editor_absoluteY="8dp"
+    tools:context="software.unf.dk.simonsaysworkingproject.MainActivity"
     tools:layout_editor_absoluteX="8dp"
-    tools:context="software.unf.dk.simonsaysworkingproject.MainActivity">
+    tools:layout_editor_absoluteY="8dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -78,11 +78,12 @@
             android:id="@+id/highScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HIGH SCORE: 0"
             android:layout_below="@id/startButton"
-            android:layout_centerHorizontal="true" />
-    </RelativeLayout>
+            android:layout_centerHorizontal="true"
+            android:text="HIGH SCORE: 0" />
 
+
+    </RelativeLayout>
 
 
     <ImageButton

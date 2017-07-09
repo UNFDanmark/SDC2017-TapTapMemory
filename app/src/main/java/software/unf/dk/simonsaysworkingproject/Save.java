@@ -44,5 +44,4 @@ public class Save {
         return sharedPref.getBoolean("level3Bought", false);
     }
 
-
 }

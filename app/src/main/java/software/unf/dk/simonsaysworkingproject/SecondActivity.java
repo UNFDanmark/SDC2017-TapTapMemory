@@ -35,7 +35,7 @@ public class SecondActivity extends AppCompatActivity {
     private ArrayList<Bulb> bulbList2;
     private ArrayList<Integer> clicked2;
     private MediaPlayer green, orange, red, blue, purple, yellow;
-    private TextView points, highscore2;
+    private TextView points;
     private long count;
 
     @Override
@@ -59,7 +59,7 @@ public class SecondActivity extends AppCompatActivity {
         bulbList2.add(new Bulb((Button) findViewById(R.id.purpleButton), PURPLE_ON, PURPLE_OFF, 4));
         bulbList2.add(new Bulb((Button) findViewById(R.id.yellowButton), YELLOW_ON, YELLOW_OFF,5));
         relativeLay = (RelativeLayout) findViewById(R.id.relativeLay2);
-        highscore2 = (TextView) findViewById(R.id.highScore2);
+
 
         sequence2 = new Sequence(0, 6);
 
