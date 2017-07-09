@@ -30,8 +30,8 @@ public class StoreActivity extends AppCompatActivity {
         pris2 = (TextView) findViewById(R.id.pris2);
         level2 = (Button) findViewById(R.id.level2);
         level3 = (Button) findViewById(R.id.level3);
-        level2pris = 10;
-        level3pris = 20;
+        level2pris = 1000;
+        level3pris = 2500;
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }

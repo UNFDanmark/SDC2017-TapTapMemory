@@ -52,7 +52,7 @@
             android:layout_alignEnd="@+id/pris"
             android:layout_alignRight="@+id/pris"
             android:layout_below="@+id/level3"
-            android:text="Pris: 2000" />
+            android:text="Pris: 2500" />
     </RelativeLayout>
 
         <TextView
