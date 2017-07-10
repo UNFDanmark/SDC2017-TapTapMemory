@@ -207,6 +207,7 @@ public class ThirdActivity extends AppCompatActivity {
         long countScore3 = Save.loadHighScore3(getApplicationContext());
         if (currentHighScore3 < sequence3.length()) {
             Save.saveHighScore3(sequence3.length(), this);
+            countScore3 =- 1;
         }
         highScore.setText(String.valueOf("High Score: " + countScore3));
 

@@ -170,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
         long countScore = Save.loadHighScore(getApplicationContext());
         if (currentHighScore < sequence.length()) {
             Save.saveHighScore(sequence.length(), this);
+            countScore =- 1;
         }
         highScore.setText(String.valueOf("High Score: " + countScore));
 

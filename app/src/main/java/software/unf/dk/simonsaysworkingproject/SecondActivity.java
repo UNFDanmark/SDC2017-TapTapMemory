@@ -179,6 +179,7 @@ public class SecondActivity extends AppCompatActivity {
         long countScore2 = Save.loadHighScore2(getApplicationContext());
         if (currentHighScore2 < sequence2.length()) {
             Save.saveHighScore2(sequence2.length(), this);
+            countScore2 =- 1;
         }
         highScore.setText(String.valueOf("High Score: " + countScore2));
 
