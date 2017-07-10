@@ -187,7 +187,7 @@ public class ThirdActivity extends AppCompatActivity {
                     Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+                    t.setGravity(Gravity.LEFT, (int) (relativeLay.getWidth() / 2.89), (int) (relativeLay.getHeight() / 2.8));
                     t.show();
                     alarmBeepMP.start();
                     sequence3.restart();
@@ -195,7 +195,7 @@ public class ThirdActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, relativeLay.getWidth() / 2, relativeLay.getHeight() / 3);
+            t.setGravity(Gravity.LEFT, (int) (relativeLay.getWidth() / 2.89), (int) (relativeLay.getHeight() / 2.8));
             t.show();
             alarmBeepMP.start();
             sequence3.restart();
