@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                     Save.savePoints(count, getApplicationContext());
                 } else {
                     Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.LEFT, (int) (relativeLay.getWidth() / 2.89), relativeLay.getHeight() / 2);
+                    t.setGravity(Gravity.LEFT, (int) (relativeLay.getWidth() / 2.89), (int) (relativeLay.getHeight() / 2.5));
                     t.show();
                     alarmBeepMP.start();
                     sequence.restart();
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             Toast t = Toast.makeText(this, "NOPE.", Toast.LENGTH_SHORT);
-            t.setGravity(Gravity.LEFT, (int) (relativeLay.getWidth() / 2.89), relativeLay.getHeight() / 2);
+            t.setGravity(Gravity.LEFT, (int) (relativeLay.getWidth() / 2.89), (int) (relativeLay.getHeight() / 2.5));
             t.show();
             alarmBeepMP.start();
             sequence.restart();

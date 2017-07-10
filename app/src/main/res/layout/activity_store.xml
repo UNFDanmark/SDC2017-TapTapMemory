@@ -7,12 +7,14 @@
     android:layout_height="wrap_content"
     tools:layout_editor_absoluteY="8dp"
     tools:layout_editor_absoluteX="8dp"
+    android:background="@color/white"
     tools:context="software.unf.dk.simonsaysworkingproject.MainActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:background="@color/white"
         android:layout_marginTop="100dp">
 
         <Button
@@ -35,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/level2"
             android:layout_centerHorizontal="true"
-            android:text="Pris: 1000"
+            android:text="Price: 1000"
             android:textStyle="bold" />
 
         <Button
@@ -59,7 +61,7 @@
             android:layout_alignEnd="@+id/pris"
             android:layout_alignRight="@+id/pris"
             android:layout_below="@+id/level3"
-            android:text="Pris: 2500"
+            android:text="Price: 2500"
             android:textStyle="bold" />
     </RelativeLayout>
 
